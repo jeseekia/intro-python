@@ -5,7 +5,7 @@
 3. Remove list comps **DONE by Nick**
 4. Remove generators **DONE by Nick**
 5. name == main (https://github.com/mjhea0/thinkful-mentor/tree/master/help-main)
-6. Comments/Doc Strings
+6. Comments/Doc Strings **added comments.md to the develop branch; needs to be converted to HTML and added into Class 1**
 7. Debugging
 8. Possibly virtualenv overview
 9. Modules
