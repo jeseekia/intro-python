@@ -1,7 +1,7 @@
 # todos ..
 
 1. Clean up the distinction between a function and a method - DONE (still a bit murky, though - methods are essentially functions in the world of OOP. i also didn't talk about scope.)
-2. Leave tuples, possibly take out sets
+2. Leave tuples, possibly take out sets (up to you)
 3. Remove list comps
 4. Remove generators
 5. name == main (https://github.com/mjhea0/thinkful-mentor/tree/master/help-main)
