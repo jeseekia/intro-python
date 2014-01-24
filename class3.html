@@ -267,57 +267,6 @@ print menu.get('juice', 5)
                 </section>
 
                 <section>
-                    <h3>Tuples</h3>
-                    <p><strong>Tuples</strong> are like lists, but they are <strong>immutable</strong>. They are particularly good at storing collections of a fixed and predictable size. Use '()' to define tuples</p>
-                    <p class="fragment">An x, y coordinate pair, or the RGB values of a color are good candidates for tuples.</p>
-                    <pre><code contenteditable class="fragment python">
-point = (0, 1)
-x = point[0]
-y = point[1]
-
-# or, even better
-
-point = (0, 1)
-x, y = point
-                    </code></pre>
-                </section>
-
-                <section>
-                    <h3>Tuple Example</h3>
-                    <p>Remember the geometry functions earlier? Some of these can be simplified using tuples</p>
-                    <pre><code contenteditable class="fragment python">
-def find_width_height(point_a, point_b):
-    x_a, y_a = point_a
-    x_b, y_b = point_b
-    return abs(x_a - x_b), abs(y_a - y_b)
-
-point_a = (5, 0)
-point_b = (10, 4)
-dimensions = find_width_height(point_a, point_b)
-                    </code></pre>
-                    <p class="fragment">N.B. - In the example, the function returns a tuple. In some contexts the parenthesis around a tuple are not strictly required</p>
-                </section>
-
-                </section>
-
-                <section>
-                    <h3>Sets</h3>
-                    <p><strong>Sets</strong> are unordered collections whose elements are unique. Therefore, adding a value to a set that already has it, does nothing.</p>
-                    <p class="fragment">Sets can be created with comma separated elements enclosed in '{}' in Python 2.7. Very often, one will make a list and use the set() function</p>
-                    <pre><code contenteditable class="fragment python">
-set_a = set([0, 3, 7])
-set_b = set([0, 4, 7])
-
-# .add() is like .append() but for sets
-print set_a.add(4)
-
-# or in 2.7
-set_a = {0, 3, 7} # and so on
-                    </code></pre>
-                    <p class="fragment">Sets have nice methods for reasoning about their relationship to other sets. (Think Venn Diagram)</p>
-                </section>
-
-                <section>
                     <h3>The in operator</h3>
                     <p>The `in` operator is used to determine if an element is in a given collection</p>
                     <p class="fragment">For dictionaries, the keys are searched for the element.</p>
@@ -451,7 +400,7 @@ all_to_dos['baby'].append('cry')
 
                 <section>
                     <h3>Means of Combination</h3>
-                    <p>Lists, dictionaries, sets, tuples, and other collections are all a means of combination.</p>
+                    <p>Lists, dictionaries, and other collections are all a means of combination.</p>
                     <p class="fragment">They can be freely combined to create the data structure needed for a particular problem</p>
                     <p class="fragment">Eg. A list of dictionaries with lists</p>
                     <pre><code contenteditable class="fragment python">
