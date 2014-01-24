@@ -9,6 +9,6 @@
 7. Debugging
 8. Possibly virtualenv overview
 9. Modules
-10. Break vs. Continue **DONE by Nick**
+10. Break vs. Continue **DONE by Nick (I have more examples here - https://github.com/mjhea0/thinkful-mentor/tree/master/break-continue)** 
 11. Functions - arguments vs parameters **DONE by Nick**
 12. pep8, zen of Python - homework? - **added brief about `>>> import this` at the end of Class 2, which I assume is the end of the first day**
