@@ -296,6 +296,33 @@ for number in numbers:
                     </ul>
                 </section>
 
+                <section>
+                    <h3>Break/Continue</h3>
+                    <ul>
+                        <li class="fragment">break - To exit early</li>
+                        <li class="fragment">continue - to skip "this" iteration, and go to the next</li>
+                    </ul>
+                    <pre><code contenteditable class="fragment python">
+numbers = [1, 2, 3]
+for number in numbers:
+    if number == 2:
+        break
+    else:
+        print number
+
+1
+
+for number in numbers:
+    if number == 2:
+        continue
+    else:
+        print number
+
+1
+3
+                    </code></pre>
+                </section>
+
                 <!-- Let's Develop It - 10 minutes -->
                 <section>
                     <h3>Let's Develop It</h3>
@@ -343,6 +370,7 @@ str(32)
                     <p>The following example is a <strong>function definition</strong>. This allows us to create our own functions</p>
                     <pre><code contenteditable class="fragment python">
 def print_plus_5(x):
+    """Add 5 to any number"""
     print x + 5
                     </code></pre>
                     <p class="fragment">The function definition has the following parts</p>
@@ -350,6 +378,7 @@ def print_plus_5(x):
                         <li class="fragment">The <strong>def</strong> keyword signifies we are defining a function</li>
                         <li class="fragment">The name of the function being defined - `print_plus_5`</li>
                         <li class="fragment">The arguments in parentheses - `x`</li>
+                        <li class="fragment">The document string. - `"""Add 5 to any number"""`</li>
                         <li class="fragment">The function <strong>body</strong>, which is a block of indented code that executes when the function is called. - `print x + 5`</li>
                     </ul>
                 </section>
@@ -395,6 +424,38 @@ def find_rectangle_area(width, height):
 area = find_rectangle_area(3, 4)
 # area is set to the value 12
                     </code></pre>
+                </section>
+
+                <section>
+                    <h3>Scope</h3>
+                    <p>The <strong>scope</strong> of a variable is the area of code in which a variable is still valid and can be used.</p>
+                    <p class="fragment">Variables defined within a function can not be used elsewhere.</p>
+                    <pre><code contenteditable class="fragment python">
+def get_triangle_area(base, height):
+    rect_area = base * height
+    return rect_area / 2.0
+
+triangle_area = get_triangle_area(10, 20)
+
+print height
+# NameError
+print rect_area
+# NameError
+                    </code></pre>
+                </section>
+
+<section>
+                    <h3>Functions with Keyward Arguments</h3>
+                    <p>A function can also take keyword arguments separated by commas. For example:</p>
+                    <pre><code contenteditable class="fragment python">
+def find_rectangle_area(width=1, height=0):
+    return width * height
+
+area = find_rectangle_area(height=4)
+# area is set to the value 4
+                    </code></pre>
+                    <p>Keyword arguments are similar to arguments with the exception of the ability to set default values</p>
+                    <p>Keyword arguments are by nature optional when calling a function.</p>
                 </section>
 
                 <section>
