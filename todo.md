@@ -6,7 +6,7 @@
 4. Remove generators **DONE by Nick**
 5. name == main (https://github.com/mjhea0/thinkful-mentor/tree/master/help-main)
 6. Comments/Doc Strings **added comments.md to the develop branch; needs to be converted to HTML and added into Class 1**
-7. Debugging
+7. Debugging **This is probably too much for just two days.**
 8. Possibly virtualenv overview
 9. Modules
 10. Break vs. Continue **DONE by Nick (I have more examples here - https://github.com/mjhea0/thinkful-mentor/tree/master/break-continue)** 
