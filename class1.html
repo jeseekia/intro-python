@@ -373,10 +373,10 @@ print('I am a Python program')
 
                 <section>
                     <h3>User Input</h3>
-                    <p>To obtain user input, use 'raw_input()'</p>
+                    <p>To obtain user input, use 'raw_input()' or in python3 use 'input()'</p>
                     <p class="fragment">Change the class1.py text to the following and run it again</p>
                     <pre><code contenteditable class="fragment python">
-input_value = raw_input("Enter a radius:")
+input_value = raw_input("Enter a radius:")  # input("enter a radius:") in python3
 radius = float(input_value)
 area = 3.14159 * radius ** 2
 print("The area of a circle with radius " + input_value + " is:")
@@ -388,7 +388,7 @@ print(area)
                 <!-- Let's develop it: 15 minutes -->
                 <section>
                     <h3>Let's Develop It</h3>
-                    <p>Write your own program that uses raw_input and does something else with the value</p>
+                    <p>Write your own program that uses raw_input/input and does something else with the value</p>
                     <p>You can use float() to treat the input as a number if you need a number, or use the input directly as a string</p>
                 </section>
 
