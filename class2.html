@@ -20,7 +20,7 @@
         <!-- dark editor--><link rel="stylesheet" href="reveal/lib/css/dark.css">
 
         <!-- If use the PDF print sheet so students can print slides-->
-        
+
         <link rel="stylesheet" href="reveal/css/print/pdf.css" type="text/css" media="print">
 
         <!--[if lt IE 9]>
@@ -46,7 +46,7 @@
                         <li>Arithmetic and variables</li>
                         <li>Data types</li>
                         <li>Text editor, command line, and python shell</li>
-                    </ul> 
+                    </ul>
                 </section>
 
                 <section>
@@ -68,12 +68,12 @@
                     <pre class="fragment"><code contenteditable class="python">
 a = 5
 b = 5
-print a == b
+print(a == b)
 # Combine comparison and assignment
 c = a == b
-print c
+print(c)
 
-print 3 &lt; 5
+print(3 &lt; 5)
                     </code></pre>
                 </section>
 
@@ -109,9 +109,9 @@ print 3 &lt; 5
                     <pre class="fragment"><code contenteditable class="python">
 a = 3
 b = 4
-print a != b
-print a <= 3
-print a >= 4
+print(a != b)
+print(a <= 3)
+print(a >= 4)
                     </code></pre>
                     <p class="fragment">Remember: Equals does not equal "equals equals"</p>
                 </section>
@@ -122,14 +122,14 @@ print a >= 4
                     <p class="fragment">We achieve this using <strong>if</strong> statements</p>
                     <pre><code contenteditable class="fragment python">
 if x == 5:
-    print 'x is equal to 5'
+    print('x is equal to 5')
                     </code></pre>
                     <p class="fragment">We often want a different block to execute if the statement is false. This can be accomplished using <strong>else</strong></p>
                     <pre><code contenteditable class="fragment python">
 if x == 5:
-    print 'x is equal to 5'
+    print('x is equal to 5')
 else:
-    print 'x is not equal to 5'
+    print('x is not equal to 5')
                     </code></pre>
                 </section>
 
@@ -139,16 +139,16 @@ else:
                     <p class="fragment">Let's look at the previous example again with a few minor changes and examine the meaning of its indentation</p>
                     <pre><code contenteditable class="fragment python">
 if x == 5:
-    print 'x is equal to 5'
+    print('x is equal to 5')
     x_is_5 = True
-    print 'Still in the x == 5 block'
+    print('Still in the x == 5 block')
 else:
-    print 'x is not equal to 5'
+    print('x is not equal to 5')
     x_is_5 = False
-    print 'Still in the else block of x == 5'
-print 'Outside of the if or else blocks.'
-print 'x_is_5:'
-print x_is_5
+    print('Still in the else block of x == 5')
+print('Outside of the if or else blocks.')
+print('x_is_5:')
+print(x_is_5)
                     </code></pre>
                 </section>
 
@@ -166,7 +166,7 @@ print x_is_5
                     <pre><code contenteditable class="fragment python">
 # 1. Simple check of two variables
 if x != 0 or y != 0:
-    print 'The point x,y is not on the x or y axis'
+    print('The point x,y is not on the x or y axis')
 
 # 2. Checking for Pong paddle missing the ball for player 2
 if ball_right_x > paddle_left_x and (ball_top_y > paddle_bottom_y or ball_bottom_y < paddle_top_y):
@@ -188,11 +188,11 @@ if ball_right_paddle and (ball_above_paddle or ball_below_paddle):
                     <p class="fragment">Chained conditionals use <strong>elif</strong> as an additonal check after the preceeding `if` predicate was False. For example</p>
                     <pre><code contenteditable class="fragment python">
 if x > 5:
-    print 'x is greater than 5'
+    print('x is greater than 5')
 elif x < 5:
-    print 'x is less than 5'
+    print('x is less than 5')
 else:
-    print 'x is equal to 5'
+    print('x is equal to 5')
                     </code></pre>
                 </section>
 
@@ -202,11 +202,11 @@ else:
                     <p class="fragment">Nested conditionals occur inside of other conditionals and are indented over once more. When the code block is complete, they are unindented</p>
                     <pre><code contenteditable class="fragment python">
 if x > 5:
-    print 'x is greater than 5'
+    print('x is greater than 5')
     if x > 10:
-        print '...it is also greater than 10'
-    print 'Done evaluating the x > 10 block'
-print 'Done evaluating the x > 5 block'
+        print('...it is also greater than 10')
+    print('Done evaluating the x > 10 block')
+print('Done evaluating the x > 5 block')
                     </code></pre>
                 </section>
 
@@ -217,18 +217,18 @@ print 'Done evaluating the x > 5 block'
                     <p>The code below is an example:</p>
                     <pre><code contenteditable class="fragment python">
 health = 100
-print "A vicious warg is chasing you."
-print "Options:"
-print "1 - Hide in the cave."
-print "2 - Climb a tree."
-input_value = raw_input("Enter choice:")
+print("A vicious warg is chasing you.")
+print("Options:")
+print("1 - Hide in the cave.")
+print("2 - Climb a tree.")
+input_value = raw_input("Enter choice:") # input("Enter choice:")
 if input_value == '1':
-    print 'You hide in a cave.'
-    print 'The warg finds you and injures your leg with its claws'
+    print('You hide in a cave.')
+    print('The warg finds you and injures your leg with its claws')
     health = health - 10
 elif input_value == '2':
-    print 'You climb a tree.'
-    print 'The warg eventually looses interest and wanders off'
+    print('You climb a tree.')
+    print('The warg eventually looses interest and wanders off')
                     </code></pre>
                 </section>
 
@@ -241,9 +241,9 @@ elif input_value == '2':
                     <pre><code contenteditable class="fragment python">
 x = 10
 while x > 0:
-    print x
+    print(x)
     x = x - 1
-print 'Done'
+print('Done')
                     </code></pre>
                 <p class="fragment">The while statement takes a predicate, and as long as it evaluates to True, the code block beneath it is repeated.</p>
                 <p class="fragment">This creates a <strong>loop</strong>. Without the `x = x - 1` statement, this would be an <strong>infinite loop</strong></p>
@@ -254,14 +254,14 @@ print 'Done'
                     <p>Consider the following example that uses iteration to derive a factorial</p>
                     <p class="fragment">(A factorial of a number is equal to that number * every positive integer less than that number. E.g. The factorial of 4 is 4 * 3 * 2 * 1, which equals 24</p>
                     <pre><code contenteditable class="fragment python">
-input_value = raw_input('Enter a positive integer:')
+input_value = raw_input('Enter a positive integer:') # input('')
 n = int(input_value)
 result = 1
 while n > 1:
     result = result * n
     n = n - 1
-print "The factorial of " + input_value + " is:"
-print result
+print("The factorial of " + input_value + " is:")
+print(result)
                     </code></pre>
                     <p class="fragment">N.B. - This implementation does not work for negative numbers. Why?</p>
                 </section>
@@ -274,8 +274,8 @@ print result
                     <pre><code contenteditable class="fragment python">
 numbers = [1, 3, 8]
 for number in numbers:
-    print "The current number is:"
-    print number
+    print("The current number is:")
+    print(number)
                     </code></pre>
                 </section>
 
@@ -285,8 +285,8 @@ for number in numbers:
                     <pre><code contenteditable class="fragment python">
 numbers = [1, 3, 8]
 for number in numbers:
-    print "The current number is:"
-    print number
+    print("The current number is:")
+    print(number)
                     </code></pre>
                     <p class="fragment">The for loop has three parts:</p>
                     <ul>
@@ -294,6 +294,28 @@ for number in numbers:
                         <li class="fragment">The name to give each element when the loop begins again - number</li>
                         <li class="fragment">The block of statements to execute with the element - The two print statements</li>
                     </ul>
+                </section>
+
+                <section>
+                    <h3>Break/Continue</h3>
+                    <ul>
+                        <li class="fragment">break - To exit early</li>
+                        <li class="fragment">continue - to skip "this" iteration, and go to the next</li>
+                    </ul>
+                    <pre><code contenteditable class="fragment python">
+numbers = [1, 2, 3]
+for number in numbers:
+    if number == 2:
+        break
+    else:
+        print(number)
+
+for number in numbers:
+    if number == 2:
+        continue
+    else:
+        print(number)
+                    </code></pre>
                 </section>
 
                 <!-- Let's Develop It - 10 minutes -->
@@ -316,7 +338,7 @@ for number in numbers:
 
                     <pre><code contenteditable class="fragment python">
 a = '3'
-print type(a)
+print(type(a))
 a = float(a)
                     </code></pre>
                 </section>
@@ -325,7 +347,7 @@ a = float(a)
                     <h3>Function calls</h3>
                     <pre><code contenteditable class="fragment python">
 a = 3
-print type(a)
+print(type(a))
                     </code></pre>
                     <p class="fragment">A function can take <strong>arguments</strong></p>
                     <p class="fragment">In the example above, the variable `a` is passed as an argument to the function `type`</p>
@@ -343,13 +365,15 @@ str(32)
                     <p>The following example is a <strong>function definition</strong>. This allows us to create our own functions</p>
                     <pre><code contenteditable class="fragment python">
 def print_plus_5(x):
-    print x + 5
+    """Add 5 to any number"""
+    print(x + 5)
                     </code></pre>
                     <p class="fragment">The function definition has the following parts</p>
                     <ul>
                         <li class="fragment">The <strong>def</strong> keyword signifies we are defining a function</li>
                         <li class="fragment">The name of the function being defined - `print_plus_5`</li>
                         <li class="fragment">The arguments in parentheses - `x`</li>
+                        <li class="fragment">The document string. - `"""Add 5 to any number"""`</li>
                         <li class="fragment">The function <strong>body</strong>, which is a block of indented code that executes when the function is called. - `print x + 5`</li>
                     </ul>
                 </section>
@@ -377,7 +401,7 @@ y = plus_5(4)
                     <p>A function does not have to take arguments, as in the following example:
                     <pre><code contenteditable class="fragment python">
 def newline():
-    print ''
+    print('')
 
 newline()
 # prints an empty line. Nothing is returned
@@ -408,9 +432,41 @@ def get_triangle_area(base, height):
 
 triangle_area = get_triangle_area(10, 20)
 
-print height
+print(height)
 # NameError
-print rect_area
+print(rect_area)
+# NameError
+                    </code></pre>
+                </section>
+
+<section>
+                    <h3>Functions with Keyward Arguments</h3>
+                    <p>A function can also take keyword arguments separated by commas. For example:</p>
+                    <pre><code contenteditable class="fragment python">
+def find_rectangle_area(width=1, height=0):
+    return width * height
+
+area = find_rectangle_area(height=4)
+# area is set to the value 4
+                    </code></pre>
+                    <p>Keyword arguments are similar to arguments with the exception of the ability to set default values</p>
+                    <p>Keyword arguments are by nature optional when calling a function.</p>
+                </section>
+
+                <section>
+                    <h3>Scope</h3>
+                    <p>The <strong>scope</strong> of a variable is the area of code in which a variable is still valid and can be used.</p>
+                    <p class="fragment">Variables defined within a function can not be used elsewhere.</p>
+                    <pre><code contenteditable class="fragment python">
+def get_triangle_area(base, height):
+    rect_area = base * height
+    return rect_area / 2.0
+
+triangle_area = get_triangle_area(10, 20)
+
+print(height)
+# NameError
+print(rect_area)
 # NameError
                     </code></pre>
                 </section>
@@ -422,10 +478,10 @@ print rect_area
                     <pre><code contenteditable class="fragment python">
 # In knights.py
 def shrubbery():
-    print "I am a shrubber"
+    print("I am a shrubber")
 
 def ni():
-    print "Ni!" * 3
+    print("Ni!" * 3)
 
 # Run a Python shell in the same directory as knights.py and enter the following
 import knights
@@ -446,7 +502,7 @@ ni()
                         <li>Write a program that uses at least one function to solve a geometry problem</li>
                         <li>Hint: You might use a loop that obtains user input, does the calculation, then prints the answer. As before, the user should be able to quit by entering "quit"</li>
                         <li>Hint: You can import your function in the shell and call it with different parameters to test it out</li>
-                        <li>Hint: Download <a href="http://calebsmith.github.io/gdi-intro-python/examples/geometry.py">geometry.py</a> and use it as an example</li>
+                        <li>Hint: Download <a href="http://nicklang.com/gdi-intro-python/examples/geometry.py">geometry.py</a> and use it as an example</li>
                     </ul>
                     <p>If you'd like to try something different or in addition, try the next slide...</p>
                 </section>
@@ -470,6 +526,16 @@ random_number = randint(1, 10)
 
                 <section>
                     <h3>Questions?</h3>
+                </section>
+
+                <section>
+                    <h3>Optional Homework</h3>
+                    <p>When you get home, open your Python interpreter and type this:<p>
+                    <pre><code contenteditable class="fragment python">
+>>> import this
+                    </code></pre>
+                    <p>Read what comes up on the screen. See if you can figure out what it all means, and then relate it back to what you learned today. Cheers!</p>
+
                 </section>
 
                 <section></section>

@@ -20,7 +20,7 @@
         <!-- dark editor--><link rel="stylesheet" href="reveal/lib/css/dark.css">
 
         <!-- If use the PDF print sheet so students can print slides-->
-        
+
         <link rel="stylesheet" href="reveal/css/print/pdf.css" type="text/css" media="print">
 
         <!--[if lt IE 9]>
@@ -38,7 +38,7 @@
                   <h3>Intro to Python</h3>
                   <h4>Class 1</h4>
                 </section>
-                
+
                 <!-- Welcome-->
                 <section>
                   <h3>Welcome!</h3>
@@ -53,7 +53,7 @@
                   </ul>
                   </div>
                 </section>
-                
+
                 <section>
                   <h3>What we will cover today</h3>
                   <ul>
@@ -108,7 +108,7 @@
                         <li class="fragment">To create the form of code the computer can use, we use the Python <a href="http://en.wikipedia.org/wiki/Interpreter_(computing)">interpreter</a>. Other languages use other interpreters or a <a href="http://en.wikipedia.org/wiki/Compiler">compiler</a></li>
                         <li class="fragment">Don't focus on what's "under the hood" for now. We will "drive the car" first</li>
                         <li class="fragment">In other words, there are many layers to the onion. We start at one layer and slowly move toward layers that are beneath or above us</li>
-                    </ul> 
+                    </ul>
                 </section>
 
                 <section>
@@ -189,22 +189,22 @@
                 <section>
                     <h3>Variables and Arithmetic</h3>
                     <pre><code contenteditable class="python">
-3 + 4 
-2 * 4 
-6 - 2 
-4 / 2 
+3 + 4
+2 * 4
+6 - 2
+4 / 2
                     </code></pre>
                     <pre><code contenteditable class="python">
 a = 2
 b = 3
-print a + b
+print(a + b)
 c = a + b
-print c * 2
+print(c * 2)
                     </code></pre>
                     <pre><code contenteditable class="python">
 a = 0
 a = a + .5
-print a
+print(a)
                     </code></pre>
                 </section>
 
@@ -214,18 +214,18 @@ print a
 a = 'Hello '
 b = 'World'
 c = a + b
-print c
+print(c)
                     </code></pre>
                     <pre><code contenteditable class="python">
 a = "Spam "
 b = a * 4
-print b
+print(b)
                     </code></pre>
                     <pre><code contenteditable class="python">
 a = 'spam '
 b = 'eggs'
 c = a * 4 + b
-print c
+print(c)
                     </code></pre>
                 </section>
 
@@ -241,14 +241,14 @@ print c
                     </ul>
                     <pre><code contenteditable class="python">
 a = 4
-print type(a)
-print type(4)
+print(type(a))
+print(type(4))
 
-print type(3.14)
+print(type(3.14))
 
 b = 'spam, again'
-print type(b)
-print type("But I don't like spam")
+print(type(b))
+print(type("But I don't like spam"))
                     </code></pre>
                 </section>
 
@@ -261,10 +261,10 @@ print type("But I don't like spam")
                             <li>What happens if we try to use division or subtraction with a string?</li>
                         </ul>
                     <pre><code contenteditable class="python">
-print "Spam" - "am"
+print("Spam" - "am")
 a = 'Spam and eggs'
-print a / 'hashbrowns'
-print a / 6
+print(a / 'hashbrowns')
+print(a / 6)
                     </code></pre>
                     </section>
 
@@ -286,7 +286,7 @@ print a / 6
 
 # NameError - Using a name that hasn't been defined yet
 a = 5
-print b
+print(b)
 b = 10
 
 # TypeError - Using an object in a way that its type does not support
@@ -361,7 +361,7 @@ pwd
                         <li class="fragment">Click file, open folder. Navigate to the gdi-intro-python folder we created and click "open"</li>
                         <li class="fragment">In the text editor, enter the following:
                     <pre><code contenteditable class="fragment python">
-print 'I am a Python program'
+print('I am a Python program')
                     </code></pre>
                         </li>
                         <li class="fragment">Click file, save as. Type 'class1.py' and click ok.</li>
@@ -373,14 +373,14 @@ print 'I am a Python program'
 
                 <section>
                     <h3>User Input</h3>
-                    <p>To obtain user input, use 'raw_input()'</p>
+                    <p>To obtain user input, use 'raw_input()' or in python3 use 'input()'</p>
                     <p class="fragment">Change the class1.py text to the following and run it again</p>
                     <pre><code contenteditable class="fragment python">
-input_value = raw_input("Enter a radius:")
+input_value = raw_input("Enter a radius:")  # input("enter a radius:") in python3
 radius = float(input_value)
 area = 3.14159 * radius ** 2
-print "The area of a circle with radius " + input_value + " is:"
-print area
+print("The area of a circle with radius " + input_value + " is:")
+print(area)
                     </code></pre>
                     <p class="fragment">N.B. - The user's input is a string so we use float() to make it a number</p>
                 </section>
@@ -388,7 +388,7 @@ print area
                 <!-- Let's develop it: 15 minutes -->
                 <section>
                     <h3>Let's Develop It</h3>
-                    <p>Write your own program that uses raw_input and does something else with the value</p>
+                    <p>Write your own program that uses raw_input/input and does something else with the value</p>
                     <p>You can use float() to treat the input as a number if you need a number, or use the input directly as a string</p>
                 </section>
 

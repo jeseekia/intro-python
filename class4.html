@@ -20,7 +20,7 @@
         <!-- dark editor--><link rel="stylesheet" href="reveal/lib/css/dark.css">
 
         <!-- If use the PDF print sheet so students can print slides-->
-        
+
         <link rel="stylesheet" href="reveal/css/print/pdf.css" type="text/css" media="print">
 
         <!--[if lt IE 9]>
@@ -174,7 +174,7 @@ class Character():
 from character import Character
 character_a = Character(10, 20, 100)
 character_a.injure(10)
-print "character health is: " + character_a.health
+print("character health is: " + character_a.health)
                     </code></pre>
                 </section>
 
@@ -216,7 +216,7 @@ class BoundedMobile(Mobile):
         if self.y < 0:
             self.y = 0
                     </code></pre>
-                    <p class="fragment">See <a href="http://calebsmith.github.io/gdi-intro-python/examples/mobile.py">mobile.py</a> for a more complete example.</p>
+                    <p class="fragment">See <a href="http://nicklang.com/gdi-intro-python/examples/mobile.py">mobile.py</a> for a more complete example.</p>
                 </section>
 
                 <section>
@@ -260,7 +260,7 @@ class Grid(object):
 
                 <section>
                     <h3>Composition Continued</h3>
-                    <p>Given the class on the previous slide, the following code creates mobiles within the grid object. (Complete code is available in the aforementioned <a href="http://calebsmith.github.io/gdi-intro-python/examples/mobile.py">mobile.py</a> file.)</p>
+                    <p>Given the class on the previous slide, the following code creates mobiles within the grid object. (Complete code is available in the aforementioned <a href="http://nicklang.com/gdi-intro-python/examples/mobile.py">mobile.py</a> file.)</p>
                     <pre><code contenteditable class="fragment python">
 from mobile import Grid
 
@@ -277,49 +277,7 @@ grid.display_grid()
                 <section>
                     <h3>Let's Develop It</h3>
                     <p>Create a class that uses inheritance, composition, or both.</p>
-                    <p>To help you, use your work from the last exercise or the classes from <a href="http://calebsmith.github.io/gdi-intro-python/examples/mobile.py">mobile.py</a></p>
-                </section>
-
-                <!-- Block 3 - Functional Programming - 20 Minutes -->
-                <section>
-                    <h3>List Comprehensions</h3>
-                    <p>I have a list and I have something I want to do to each element to create a new list</p>
-                    <pre><code contenteditable class="fragment python">
-squares = []
-for number in range(11):
-    squares.append(number ** 2)
-                    </code></pre>
-                    <p class="fragment">This pattern is so common, there is a shorter way to express it:</p>
-                    <pre><code contenteditable class="fragment python">
-squares = [number ** 2 for number in range(11)]
-                    </code></pre>
-                    <p class="fragment">This is called a <strong>list comprehension</strong></p>
-                </section>
-
-                <section>
-                    <h3>Generators</h3>
-                    <p>A <strong>generator</strong> is like a list, but it is evaluated when it is used rather than when it is defined.</p>
-                    <p class="fragment">Generators are useful when the list may be very large or when the task is time consuming</p>
-                    <pre><code contenteditable class="fragment python">
-#Define a generator
-def find_squares(numbers):
-    for number in numbers
-        yield number ** 2
-
-#Iterate on a generator like a list
-for square in find_squares(range(10)):
-    print square
-                    </code></pre>
-                    <p class="fragment">A function with a <strong>yield</strong> statement creates a generator. Each yield statement "yields" the next value in the sequence</p>
-                </section>
-
-                <section>
-                    <h3>Generator Comprehensions</h3>
-                    <p>A <strong>generator comprehension</strong> is created the same way as list comprehension, but replacing the square brackets with parenthesis.</p>
-                    <pre><code contenteditable class="fragment python">
-ten_squares = (number ** 2 for number in range(10))
-                    </code></pre>
-                    <p class="fragment">These are used liberally in the functions of <a href="http://calebsmith.github.io/gdi-intro-python/examples/books.py">books.py</a> example from class 3.</p>
+                    <p>To help you, use your work from the last exercise or the classes from <a href="http://nicklang.com/gdi-intro-python/examples/mobile.py">mobile.py</a></p>
                 </section>
 
                 <section>
@@ -358,7 +316,7 @@ squares = map(square, range(10))
                         </tr>
                         <tr>
                             <td>Encryption</td>
-                            <td>Read about the <a href="https://en.wikipedia.org/wiki/Caesar_cipher">Caesar Cipher</a> or find a similarly simple encryption mechanism online. You should find the ord() and chr() functions helpful, as well as the modulus operator '%'</td> 
+                            <td>Read about the <a href="https://en.wikipedia.org/wiki/Caesar_cipher">Caesar Cipher</a> or find a similarly simple encryption mechanism online. You should find the ord() and chr() functions helpful, as well as the modulus operator '%'</td>
                         </tr>
                     </table>
                     <p>continued on next page...</p>
@@ -407,6 +365,26 @@ squares = map(square, range(10))
 
                 <section>
                     <h3>Questions?</h3>
+                </section>
+
+                <section>
+                  <h3>Upcoming Events</h3>
+                  <div class="left" style="width: 45%;font-size: 80%;">
+                    <strong class="green">Core Team Planning session</strong>
+                    <p>Feb. 6th, 6pm - 8pm</p>
+                    <p style="color:#999">InspiringApps</p>
+                  <strong class="blue">Intro to Servers</strong>
+                    <p>Feb. 8th &amp; 9th, 1pm - 5pm</p>
+                    <p style="color:#999">Simple Energy</p>
+                  </div>
+                  <div class="right" style="width: 45%;font-size: 80%;">
+                  <strong class="green">Code &amp; Coffee - Boulder</strong>
+                    <p>Feb. 15th, 10am - 1pm</p>
+                    <p style="color:#999">The Cup</p>
+                  <strong class="blue">Intermediate Git &amp; GitHub</strong>
+                    <p>Feb. 24th &amp; 9th, 6:3pm - 9pm</p>
+                    <p style="color:#999">Simple Energy</p>
+                  </div>
                 </section>
 
             </div>
