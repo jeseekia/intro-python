@@ -148,36 +148,6 @@ print(x_is_5)
                 </section>
 
                 <section>
-                    <h3>Predicates</h3>
-                    <p>The expression after `if` and before the colon is a Boolean expression, also called a <strong>predicate</strong></p>
-                    <p class="fragment">A variable can be used to store the evaluation of a predicate, especially if it is particularly long or complicated</p>
-                    <p class="fragment">Predicates can be combined or prefaced with <strong>Logical operators</strong>: `not`, `and` and `or`</p>
-                    <p class="fragment">Predicates and the logical operators that act on them can be wrapped in parenthesis to enforce prescendence</p>
-                </section>
-
-                <section>
-                    <h3>Predicates continued</h3>
-                    <p>The following shows some examples of combining these techniques:</p>
-                    <pre><code contenteditable class="fragment python">
-# 1. Simple check of two variables
-if x != 0 or y != 0:
-    print('The point x,y is not on the x or y axis')
-
-# 2. Checking for Pong paddle missing the ball for player 2
-if ball_right_x > paddle_left_x and (ball_top_y > paddle_bottom_y or ball_bottom_y < paddle_top_y):
-    player_1_score += 1
-
-# The second example is a little long, we should simplify it
-ball_above_paddle = ball_bottom_y < paddle_top_y
-ball_below_paddle = ball_top_y > paddle_bottom_y
-ball_right_paddle = ball_right_x > paddle_left_x
-
-if ball_right_paddle and (ball_above_paddle or ball_below_paddle):
-    player_1_score += 1
-                    </code></pre>
-                </section>
-
-                <section>
                     <h3>Chained conditionals</h3>
                     <p class="fragment">Conditionals can also be <strong>chained</strong></p>
                     <p class="fragment">Chained conditionals use <strong>elif</strong> as an additonal check after the preceeding `if` predicate was False. For example</p>
@@ -291,28 +261,6 @@ for number in numbers:
                     </ul>
                 </section>
 
-                <section>
-                    <h3>Break/Continue</h3>
-                    <ul>
-                        <li class="fragment">break - To exit early</li>
-                        <li class="fragment">continue - to skip "this" iteration, and go to the next</li>
-                    </ul>
-                    <pre><code contenteditable class="fragment python">
-numbers = [1, 2, 3]
-for number in numbers:
-    if number == 2:
-        break
-    else:
-        print(number)
-
-for number in numbers:
-    if number == 2:
-        continue
-    else:
-        print(number)
-                    </code></pre>
-                </section>
-
                 <!-- Let's Develop It - 10 minutes -->
                 <section>
                     <h3>Let's Develop It</h3>
@@ -326,8 +274,7 @@ for number in numbers:
                 <!-- Block 3 30 minutes -->
                 <section>
                     <h3>Functions</h3>
-                    <p>Also known as "procedures"</p>
-                    <p> - A named unit of code that performs a specific task</p>
+                    <p> - A named section of code that performs a specific task</p>
                     <p class="fragment">When one uses a function, one makes a function <strong>call</strong></p>
                     <p class="fragment">We have already made a function call when using the type, int, or float functions</p>
 
@@ -360,7 +307,6 @@ str(32)
                     <p>The following example is a <strong>function definition</strong>. This allows us to create our own functions</p>
                     <pre><code contenteditable class="fragment python">
 def print_plus_5(x):
-    """Add 5 to any number"""
     print(x + 5)
                     </code></pre>
                     <p class="fragment">The function definition has the following parts</p>
@@ -368,7 +314,6 @@ def print_plus_5(x):
                         <li class="fragment">The <strong>def</strong> keyword signifies we are defining a function</li>
                         <li class="fragment">The name of the function being defined - `print_plus_5`</li>
                         <li class="fragment">The arguments in parentheses - `x`</li>
-                        <li class="fragment">The document string. - `"""Add 5 to any number"""`</li>
                         <li class="fragment">The function <strong>body</strong>, which is a block of indented code that executes when the function is called. - `print x + 5`</li>
                     </ul>
                 </section>
@@ -434,59 +379,16 @@ print(rect_area)
                     </code></pre>
                 </section>
 
-<section>
-                    <h3>Functions with Keyward Arguments</h3>
-                    <p>A function can also take keyword arguments separated by commas. For example:</p>
-                    <pre><code contenteditable class="fragment python">
-def find_rectangle_area(width=1, height=0):
-    return width * height
-
-area = find_rectangle_area(height=4)
-# area is set to the value 4
-                    </code></pre>
-                    <p>Keyword arguments are similar to arguments with the exception of the ability to set default values</p>
-                    <p>Keyword arguments are by nature optional when calling a function.</p>
-                </section>
-
-                <section>
-                    <h3>Scope</h3>
-                    <p>The <strong>scope</strong> of a variable is the area of code in which a variable is still valid and can be used.</p>
-                    <p class="fragment">Variables defined within a function can not be used elsewhere.</p>
-                    <pre><code contenteditable class="fragment python">
-def get_triangle_area(base, height):
-    rect_area = base * height
-    return rect_area / 2.0
-
-triangle_area = get_triangle_area(10, 20)
-
-print(height)
-# NameError
-print(rect_area)
-# NameError
-                    </code></pre>
-                </section>
 
                 <section>
                     <h3>Import statements</h3>
-                    <p>The <strong>import</strong> statement allows us to use Python code that is defined in one file in a different file, or inside of the shell.</p>
+                    <p>The <strong>import</strong> statement allows us to use Python code that is defined in one file in a different file</p>
+                    <p class="fragment">Import statements can be used to import various specialized libraries - such as scikit or nympy - into our code</p>
+                    <p class="fragment"><strong>def library:</strong> A published collection of useful functions for doing a specific type of coding.  There are math, statistics, data science, and graphics libraries, to name a few types.</p>
                     <p class="fragment">The <strong>from</strong> keyword allows us to only import parts of a Python file</p>
                     <pre><code contenteditable class="fragment python">
-# In knights.py
-def shrubbery():
-    print("I am a shrubber")
-
-def ni():
-    print("Ni!" * 3)
-
-# Run a Python shell in the same directory as knights.py and enter the following
-import knights
-knights.shrubbery()
-knights.ni()
-
-# or
-from knights import shrubbery, ni
-shrubbery()
-ni()
+from math import sqrt
+sqrt(2)
                     </code></pre>
                 </section>
 
