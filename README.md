@@ -14,7 +14,7 @@ The course is meant to be taught in 4 two-hour sections. Each of the slides and 
 
 Intro to programming in Python - First steps for programming using the Python shell.
 
-What is programming? What is Python? We'll tackle these concepts, set up a development environment, and get started working in the Python shell
+What is programming? What is Python? We'll tackle these concepts and get started working in the Python shell
 
 ### Class 2
 
@@ -32,7 +32,7 @@ Lists, dictionaries and other built-in containers give the Python programmer tre
 
 Higher level abstractions using object oriented and functional programming
 
-What is Object-Oriented Programming and Functional Programming and how can they help make programming easier?
+What is Functional Programming and how can it help make programming easier?
 
 We'll also get started on some projects that you can do with your new Python skills.
 
