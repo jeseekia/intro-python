@@ -121,6 +121,8 @@ pre {
     min-height: 300px;
     max-height: 475px;
     padding: 5px 10px;
+
+    &.small { min-height: 50px }
   }
 }
 

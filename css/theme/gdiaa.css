@@ -2568,11 +2568,15 @@ pre code {
   max-height: 475px;
   padding: 5px 10px;
 }
+/* line 125, source/gdiaa.scss */
+pre code.small {
+  min-height: 50px;
+}
 
 /*********************************************
  * EVENT
  *********************************************/
-/* line 131, source/gdiaa.scss */
+/* line 133, source/gdiaa.scss */
 .event__title {
   text-transform: uppercase !important;
 }
