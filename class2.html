@@ -123,7 +123,7 @@ print(a >= 4)
             <p class="copy--small box--small">When we want different code to execute dependending on certain criteria, we use a <strong>conditional</strong></p>
             <div class="fragment box--small">
             <p class="copy--xsmall">We achieve this using <strong>if</strong> statements</p>
-            <pre><code contenteditable class=" small python">
+            <pre><code contenteditable class="small python">
 if x == 5:
     print('x is equal to 5')
             </code></pre></div>
@@ -197,7 +197,7 @@ print("A vicious warg is chasing you.")
 print("Options:")
 print("1 - Hide in the cave.")
 print("2 - Climb a tree.")
-input_value = raw_input("Enter choice:") # input("Enter choice:")
+input_value = input("Enter choice:")
 if input_value == '1':
     print('You hide in a cave.')
     print('The warg finds you and injures your leg with its claws')
@@ -211,29 +211,29 @@ elif input_value == '2':
 
       <!-- LOOPS -->
       <section>
-                <!-- Block 2 25 minutes -->
-                <section>
-                    <h3>Iteration</h3>
-                    <p class="box--small copy--small">It is often useful to perform a task and to repeat the process until a certain point is reached.</p>
-                    <p class="box--small copy--small fragment">The repeated execution of a set of statements is called <strong>iteration</strong></p>
-                    <div class="fragment"><p class="box--small copy--small">One way to acheive this, is with the <strong>while</strong> loop.</p>
-                                        <pre><code contenteditable class=" small python">
-                    x = 10
-                    while x > 0:
-                        print(x)
-                        x = x - 1
-                    print('Done')
-                                        </code></pre></div>
-                <p class="box--small copy--small fragment">The while statement takes a predicate, and as long as it evaluates to True, the code block beneath it is repeated.</p>
-                <p class="box--small copy--small fragment">This creates a <strong>loop</strong>. Without the <code>x = x - 1</code> statement, <br/>this would be an <strong>infinite loop</strong></p>
-                </section>
+        <!-- Block 2 25 minutes -->
+        <section>
+          <h3>Iteration</h3>
+          <p class="box--small copy--small">It is often useful to perform a task and to repeat the process until a certain point is reached.</p>
+          <p class="box--small copy--small fragment">The repeated execution of a set of statements is called <strong>iteration</strong></p>
+          <div class="fragment"><p class="box--small copy--small">One way to acheive this, is with the <strong>while</strong> loop.</p>
+            <pre><code contenteditable class=" small python">
+x = 10
+while x > 0:
+    print(x)
+    x = x - 1
+print('Done')
+          </code></pre></div>
+          <p class="box--small copy--small fragment">The while statement takes a predicate, and as long as it evaluates to True, the code block beneath it is repeated.</p>
+          <p class="box--small copy--small fragment">This creates a <strong>loop</strong>. Without the <code>x = x - 1</code> statement, <br/>this would be an <strong>infinite loop</strong></p>
+        </section>
 
                 <section>
                     <h3>While loops</h3>
                     <p class="box--small copy--small">Consider the following example that uses iteration to derive a factorial</p>
                     <p class="box--small copy--xsmall fragment">A factorial of a number is equal to that number * every positive integer less than that number. E.g. The factorial of 4 is 4 * 3 * 2 * 1, which equals 24</p>
                     <div class="fragment"><pre><code contenteditable class="small python">
-input_value = raw_input('Enter a positive integer:') # input('')
+input_value = input('Enter a positive integer:') # input('')
 n = int(input_value)
 result = 1
 while n > 1:
@@ -242,7 +242,7 @@ while n > 1:
 print("The factorial of " + input_value + " is:")
 print(result)
                                         </code></pre></div>
-                    <p class="copy--small box--small fragment">N.B. - This implementation does not work for negative numbers. Why?</p>
+                    <p class="copy--small box--small fragment">This implementation does not work for negative numbers. Why?</p>
                 </section>
 
                 <section>
@@ -445,12 +445,69 @@ random_number = randint(1, 10)
         </section>
 
         <section>
-            <h3>Optional Homework</h3>
-            <p span class="box copy--small">When you get home, open your Python interpreter and type this:<p>
-            <pre><code contenteditable class="small python">
->>> import this
-            </code></pre>
-            <p span class="box copy--small">Read what comes up on the screen. See if you can figure out what it all means, and then relate it back to what you learned today. Cheers!</p>
+          <h3>Homework</h3>
+
+          <ul>
+            <li><p>Write a function that a bar could use to check to see if a customer is of drinking age. <pre>isOfDrinkingAge(age)</pre></p></li>
+            <li><p>If it is a saturday in spring and it is above 65 degrees, Kermit plants flowers. Write a function to check whether he will plant flowers today. <pre>willKermitPlantFlowers(dayOfWeek, season, currentTemperature)</pre></p></li>
+            <li><p>Zach knows something is wrong with his basement if the temperature is below 50 or the humidity is above 70%. Write a function that can check whether his basement has a problem. <pre>basementIsOk(temperature, humidity)</pre></p></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Homework</h3>
+
+          <p>Given any list of any sort of mixed types,write a function that prints the type each item in the list. </p>
+          <p>You can try this list: <pre>[1, 'hello', 12.33, 'data', [1,2]]</pre></p>
+          <br>
+          <pre>typeIdentifier(list)</pre>
+          <pre><code contenteditable class="small python">
+#should output something like this:
+1 is a &ltclass int&gt
+hello is a &ltclass string&gt
+12.33 is a &ltclass float&gt
+          </code></pre>
+        </section>
+        
+        <section>
+          <h3>Homework</h3>
+          <p>Write a function that asks the user to guess a number between 1 and 100</p>
+          <ul>
+            <li class="future"><p>If their guess is within 20, tell them they are 'warm'</p></li>
+            <li class="future"><p>If their guess is within 10, tell them they are 'hot'</p></li>
+            <li class="future"><p>If their guess is within 5, tell them they are 'scalding'</p></li>
+            <li class="future"><p>if their guess is within 50, tell them they are 'cool'</p></li>
+            <li class="future"><p>otherwise tell them they are 'cold'</p></li>
+            <li class="future"><p>If they guess the number, congratulate them and ask if they'd like to play again.</p></li>
+          </ul>
+            <h6>Optional Extra Challenge: Let them know if they are 'warmer' or 'colder' than their last guess.</h6>
+        </section>
+
+        <section>
+          <h3>Optional Function Practice</h3>
+          <pre><code>
+# write a function to...
+# ...add 10 to any number
+# ...divide any number by 100
+# ...add any 2 numbers
+# ...subtract any 2 numbers
+# ...convert celsius to farenheight
+# ...convert farenheight to celsius
+# ...convert inches to centimeters
+# ...convert centimeters to inches
+# ...calculate sales tax for any given total amount
+# ...calculate the area of a triangle (1/2 base * height)
+# ...calculate the volume of a rectangular prism (length * width * height)
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Optional Boolean Practice</h3>
+
+          <p>Do this excercise from Learn Python The Hard Way</p>
+          <i>Make sure to do these problems by hand, not with python! </i>
+
+          <h6><a href="https://lpthw.readthedocs.org/en/latest/ex28/">https://lpthw.readthedocs.org/en/latest/ex28/</a></h6>
         </section>
 
         <section>
