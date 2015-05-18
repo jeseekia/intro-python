@@ -41,7 +41,7 @@
         <!-- Block 1 25 minutes -->
         <section>
             <h3>Review</h3>
-            <ul>
+            <ul class="list--xtall copy--small box">
                 <li>Functions - calls, definitions, returns, arguments</li>
                 <li>Conditions - if, elif, else</li>
                 <li>Loops - while, for</li>
@@ -50,7 +50,7 @@
 
         <section>
             <h3>What we will cover today</h3>
-            <ul>
+            <ul class="list--xtall copy--small box">
                 <li class="fragment">More Functions</li>
                 <li class="fragment">Method calls</li>
                 <li class="fragment">Lists and dictionaries</li>
@@ -59,13 +59,14 @@
         </section>
       </section>
 
+      <!-- FUNCTIONS -->
       <section>
         <section>
             <h3>More with Functions</h3>
-            <p>Functions can also call other functions.</p>
-            <p class="fragment">One can use this to break up tasks into small pieces that rely on others to do their work.</p>
-            <pre><code contenteditable class="fragment python">
-from math import sqrt
+            <p class="copy--small box--small">Functions can also call other functions.</p>
+            <p class="copy--small box--small fragment">You can use this to break up tasks<br/>into small pieces that rely on others to do their work.</p>
+            <div class="fragment">
+            <pre><code contenteditable class=" python">from math import sqrt
 
 def absolute_difference(value_a, value_b):
     return abs(value_a - value_b)
@@ -90,13 +91,14 @@ def print_area_and_hypotenuse(x1, y1, x2, y2):
     print('The diagonal of the rectangle is:')
     print(hypotenuse)
             </code></pre>
+          </div>
         </section>
 
         <section>
             <h3>Function Composition</h3>
-            <p><strong>Function composition</strong> is when the output of one function acts as the input of another</p>
-            <pre><code contenteditable class="fragment python">
-from math import sqrt
+            <p class="copy--small box--small"><strong>Function composition</strong> is when the <span class="blue">output</span><br/>of one function <span class="green">acts as the input</span> of another</p>
+            <div class="fragment">
+            <pre><code contenteditable class=" python">from math import sqrt
 
 def find_width_height(x1, y1, x2, y2):
     return abs(x1 - x2), abs(y1 - y2)
@@ -113,19 +115,23 @@ def print_hypotenuse(x1, y1, x2, y2):
 # is the same as:
 #     y = g(x)
 #     f(y)
-            </code></pre>
+            </code></pre></div>
         </section>
       </section>
 
       <section>
         <section>
-            <h3>Method Calls</h3>
-            <p>Remember: Functions are called by their name - `my_function()` - can be passed data in the form of parameters - `my_function(my_parameter)` and usually return some sort of value. This all happens explicitly.</p>
-            <p><strong>Methods</strong> meanwhile, are also called by name but they are associated with an object. Really, they are identical to functions except that the data passed into it is passed implicitly.</p>
-            <p class="fragment">For example, the integers and strings we've been using have methods attached to them</p>
-            <p class="fragment">We can use the dir() function to see the methods of an object and help() to see what they do.</p>
-            <pre><code contenteditable class="fragment python">
-a = 4
+            <h3>Remember</h3>
+            <p class="copy--small box"><strong>Functions</strong> are called by their name - <code>my_function()</code></p>
+            <p class="copy--small box">They can be passed data in the form of parameters - <code>my_function(my_parameter)</code></p>
+            <p class="copy--small box">They usually return some sort of value. This all happens explicitly.</p>
+        </section>
+        <section>
+          <h3>Method Calls</h3>
+            <p class="copy--small box"><strong>Methods</strong> are also called by name but are associated with an object.<br/><small>Really, they are identical to functions except that the data passed into it is passed implicitly.</small></p>
+            <p class="copy--xsmall box fragment">For example, the integers and strings we've been using have methods attached to them.</p>
+            <p class="copy--xsmall box fragment">We can use the <code>dir()</code> function to see the methods of an object<br/>and <code>help()</code> to see what they do.</p>
+            <div class="fragment"><pre><code contenteditable class=" small python">a = 4
 print(dir(a))
 
 name = 'caleb'
@@ -136,55 +142,58 @@ print(name.capitalize())
 print(sentence.count('the'))
 
 help(name.upper)
-            </code></pre>
+            </code></pre></div>
         </section>
 
         <!-- Let's develop it: 5 minutes -->
         <section>
             <h3>Let's Develop It</h3>
-            <p>Open a Python shell and define a string varaible</p>
-            <p>Use 'dir(string_variable)' and the help() function to explore the various methods
-            <p>Hint: Like functions, some methods take arguments and others don't</p>
-            <p>Hint: Use help() on a method. It will tell you the arguments to use and the expected behavior</p>
-            <p>Hint: Don't be afraid of errors. They seem to be in a foreign language but they are there to help you. Read them carefully.</p>
+            <p class="copy--small box--small">Open a Python shell and define a string varaible</p>
+            <p class="copy--small box--small">Use <code>dir(string_variable)</code> and the <code>help()</code> function<br/>to explore the various methods
+            <p class="copy--small box--small"><strong>Hint:</strong> Like functions, some methods take arguments and others don't</p>
+            <p class="copy--small box--small"><strong>Hint:</strong> Use <code>help()</code> on a method.<br/><small>It will tell you the arguments to use and the expected behavior</small></p>
+            <p class="copy--small box--small"><strong>Hint:</strong> Don't be afraid of errors.<br/><small>They seem to be in a foreign language but they are there to help you.<br/><i>Read them carefully.</i></small></p>
         </section>
       </section>
 
+      <!-- LISTS : 30 minutes -->
       <section>
-        <!-- Block 2 30 minutes -->
         <section>
             <h3>Lists</h3>
-            <p>A list is an ordered collection of elements</p>
-            <p class="fragment">In Python, a list is defined using `[ ]` with elements separated by commas, as in the following example</p>
-            <pre><code contenteditable class="fragment python">
+            <p class="copy--small box--small">A list is an ordered collection of elements</p>
+            <div class="fragment"><p class="copy--small box--small">In Python, a list is defined using <code>[ ]</code> with elements separated by commas, as in the following example</p>
+            <pre><code contenteditable class="small python">
 words = ['list', 'of', 'strings']
             </code></pre>
-            <p class="fragment">A list can, but doesn't have to be of all one type. A list of one type is <strong>homogenous</strong> as opposed to a list of multiple types, which is <strong>heterogeneous</strong>.</p>
-            <pre><code contenteditable class="fragment python">
+            </div>
+            <div class="fragment">
+            <p class="copy--small box--small">A list can, but doesn't have to be of all one type.<br/><small>A list of one type is <strong>homogenous</strong> as opposed to a list of multiple types, which is <strong>heterogeneous</strong>.</small></p>
+            <pre><code contenteditable class="small python">
 # heterogenous list
 words = [0, 'list', 'of', 3, 'strings', 'and', 'numbers']
-            </code></pre>
+            </code></pre></div>
         </section>
 
         <section>
             <h3>List Methods</h3>
-            <p>Lists have several methods, the most useful of which is `append`</p>
-            <p class="fragment">A list can be created as an empty list and have values added to it with `append`</p>
-            <pre><code contenteditable class="fragment python">
+            <p class="copy--small box--small">Lists have several methods, the most useful of which is <code>append</code></p>
+            <div class="copy--small box--small">
+            <p class="copy--small box--small ">A list can be created as an empty list and have values added to it with <code>append</code></p>
+            <pre><code contenteditable class="small python">
 to_dos = []
 to_dos.append('buy soy milk')
 to_dos.append('install git')
 print(to_dos)
-            </code></pre>
-            <p class="fragment">Therefore, lists are <strong>mutable</strong></p>
-            <p class="fragment">This means that a list can change values during the duration of a program</p>
+            </code></pre></div>
+            <p class="copy--small box--small fragment">Therefore, lists are <strong>mutable</strong></p>
+            <p class="copy--small box--small fragment">This means that a list can change values<br/>during the duration of a program</p>
         </section>
 
         <section>
             <h3>Iteration</h3>
-            <p>Lists and many other collections are <strong>iterable</strong>.</p>
-            <p class="fragment">Once defined, we can iterate on them, performing an action with each element</p>
-            <pre><code contenteditable class="fragment python">
+            <p class="copy--small box--small">Lists and many other collections are <strong>iterable</strong>.</p>
+            <div class="fragment"><p class="copy--small box--small">Once defined, we can iterate on them,<br/>performing an action with each element</p>
+            <pre><code contenteditable class="small python">
 shipping_cost = 2.5
 prices = [3, 4, 5.25]
 costs = []
@@ -194,25 +203,25 @@ for price in prices:
 
 for cost in costs:
     print(cost)
-            </code></pre>
+            </code></pre></div>
         </section>
 
         <section>
             <h3>Indexing</h3>
-            <p>An element can also be obtained from a list through <strong>indexing</strong></p>
-            <p class="fragment">This allows us to obtain an element without iterating through the entire collection if we just want one value.</p>
-            <p class="fragment">To index on a collection, follow it immediately with `[index]`. (index here is a number, variable or expression)</p>
-            <pre><code contenteditable class="fragment python">
+            <p class="copy--small box--small">An element can also be obtained from a list through <strong>indexing</strong></p>
+            <p class="copy--small box--small fragment">This allows us to obtain an element without iterating through the entire collection if we just want one value.</p>
+            <div class="fragment"><p class="copy--small box--small">To index on a collection, follow it immediately with <code>[index]</code>. (index here is a number, variable or expression)</p>
+            <pre><code contenteditable class="small python">
 numbers = [10, 20, 30]
 print(numbers[0])
-            </code></pre>
+            </code></pre></div>
         </section>
 
         <section>
             <h3>Indexing continued</h3>
 
-            <p class="fragment">Lists and other collections in Python are <strong>zero indexed</strong>. This means that the number 0 refers to first element in the list.</p>
-            <pre><code contenteditable class="fragment python">
+            <p class="box--small copy--small">Lists and other collections in Python are <strong>zero indexed</strong>.<br/><small>This means that the number 0 refers to first element in the list.</small></p>
+            <pre><code contenteditable class="small python">
 to_dos = [
     'install git', 'read email', 'make lunch',
 ]
@@ -221,46 +230,46 @@ print(to_dos[1])
 
 print(to_dos[-1])
             </code></pre>
-            <p class="fragment">Negative numbers mean "go back from the end this many". e.g. -1 is the last element, -2 is the penultimate</p>
-            <p class="fragment">An IndexError results if an index exceeds the length of the list minus 1</p>
+            <p class="box--small copy--small fragment">Negative numbers mean "go back from the end this many".<br/><small>e.g. -1 is the last element, -2 is the penultimate</small></p>
+            <p class="box--small copy--xsmall fragment">An IndexError results if an index exceeds the length of the list minus 1</p>
         </section>
       </section>
 
       <section>
         <section>
             <h3>Dictionaries</h3>
-            <p>A <strong>dictionary</strong> (sometimes called a "hashmap") is a collection of key/value pairs, defined with '{}'</p>
-            <pre><code contenteditable class="fragment python">
+            <p class="box--small copy--small">A <strong>dictionary</strong> (sometimes called a "hashmap") is a collection of key/value pairs, defined with <code>{}</code></p>
+            <pre><code contenteditable class="small python">
 menu_categories = {
     'food': 'stuff you eat',
     'beverage': 'stuff you drink',
 }
             </code></pre>
-            <p class="fragment">Think of words in a dictionary. The words are keys and the definitions are values.</p>
-            <p class="fragment">This dictionary would be indexed with strings such as 'food' and 'beverage' instead of integers like in a list</p>
-            <p class="fragment"></p>
+            <p class="copy--small box--small fragment">Think of words in a dictionary.<br/><small>The words are keys and the definitions are values.</small></p>
+            <p class="copy--small box--small fragment">This dictionary would be indexed with strings such as 'food' and 'beverage' instead of integers like in a list</p>
         </section>
 
         <section>
             <h3>Indexing on Dictionaries</h3>
-            <p>Dictionaries aren't literally just for definitions. They represent a group of mappings. A mapping might be: menu items -> costs.</p>
-            <p class="fragment">We can also index on dictionaries.</p>
-            <p class="fragment">The most common indexes are strings, but they can be whatever type the keys are.</p>
-            <pre><code contenteditable class="fragment python">
+            <p class="box--small copy--small">Dictionaries aren't literally just for definitions. They represent a group of mappings. A mapping might be: menu items -> costs.</p>
+            <p class="box--small copy--small fragment">We can also index on dictionaries.</p>
+            <div class="fragment">
+            <p class="box--small copy--small">The most common indexes are strings,<br/>but they can be whatever type the keys are.</p>
+            <pre><code contenteditable class="small python">
 menu = {
     'tofu': 4,
 }
 
 tofu_cost = menu['tofu']
-            </code></pre>
-            <p class="fragment">Indexing on a key that doesn't exist results in a KeyError</p>
-            <p class="fragment">If you aren't certain a key is present, you can use the 'get' method</p>
+            </code></pre></div>
+            <p class="box--small copy--small fragment">Indexing on a key that doesn't exist results in a KeyError</p>
+            <p class="box--small copy--small fragment">If you aren't certain a key is present, you can use the <code>get</code> method</p>
         </section>
 
         <section>
             <h3>Dictionary Methods</h3>
-            <p>Some of the most essential methods are 'keys', 'values' and 'items'</p>
-            <pre><code contenteditable class="fragment python">
+            <p class="box--small copy--small">Some of the most essential methods are <code>keys</code>, <code>values</code> and <code>items</code></p>
+            <pre><code contenteditable class="small python">
 menu = {
     'tofu': 4,
     'pizza': 8,
@@ -274,14 +283,14 @@ print(menu.get('pizza'))
 print(menu.get('water'))
 print(menu.get('juice', 5))
             </code></pre>
-            <p class="fragment">'get' will return None if the key isn't present or a default value if provided.</p>
+            <p class=" box--small copy--small"><code>get</code> will return None if the key isn't present<br/>or a default value if provided.</p>
         </section>
 
         <section>
             <h3>The in operator</h3>
-            <p>The `in` operator is used to determine if an element is in a given collection</p>
-            <p class="fragment">For dictionaries, the keys are searched for the element.</p>
-            <pre><code contenteditable class="fragment python">
+            <p class="box--small copy--small">The <code>in</code> operator is used to determine if<br/>an element is in a given collection</p>
+            <div class="fragment"><p class="box--small copy--small ">For dictionaries, the keys are searched for the element.</p>
+            <pre><code contenteditable class="small python">
 color = (255, 255, 0)
 if 0 in color:
     print('0 is in the color')
@@ -291,25 +300,25 @@ print('tofu' in menu)
 
 names = ['Mary', 'Martha', 'George']
 george_present = 'George' in names
-            </code></pre>
+            </code></pre></div>
         </section>
 
         <!-- Let's develop it: 15 minutes -->
         <section>
             <h3>Let's Develop It</h3>
-            <p>Write a program that opens a text file and does some processing.</p>
-            <ul>
+            <p class="box copy--small">Write a program that opens a text file and does some processing.</p>
+            <ul class="list--xtall copy--xsmall">
                 <li>The program should take a word as input and determine if the word appears in the file</li>
                 <li>The program should use at least one function to do its work and you should be able to import this function in a Python shell and call it with a word and filename</li>
                 <li>Use the functions from <a href="http://nicklang.com/gdi-intro-python/examples/helpers.py">helpers.py</a> to help with reading in the lines and/or words of the file</li>
                 <li>Download a book in plain text from <a href="http://www.gutenberg.org/wiki/Main_Page">Project Gutenburg</a> and put it into the same directory as your python file.</li>
             </ul>
-            <p>The next slide has some code and other resources that should help you get started</p>
+            <p class="box copy--small">The next slide has some code and other<br/>resources that should help you get started</p>
         </section>
 
         <section>
             <h3>Let's Develop It- Example Code</h3>
-            <pre><code contenteditable class="python">
+            <pre><code contenteditable class="small python">
 from helpers import generate_cleaned_lines
 
 def is_word_in_file(word, filename):
@@ -322,7 +331,8 @@ input_word = raw_input("Enter a word to search for:")  # input()
 answer = is_word_in_file(input_word, 'pride.txt')
 # Display the answer in some meaningful way
             </code></pre>
-            <p>I have used <a href="http://nicklang.com/gdi-intro-python/examples/pride.txt">Pride and Prejudice</a> from Project Gutenburg with my example code. You can click this link and copy/paste the text into a new text file called 'pride.txt' and save it in the same folder as your code</p>
+            <p class="copy--xsmall box--small">I have used <a href="http://nicklang.com/gdi-intro-python/examples/pride.txt">Pride and Prejudice</a> from Project Gutenburg with my example code.</p>
+            <p class="copy--xsmall">You can click this link and copy/paste the text into a new text file<br/>called 'pride.txt' and save it in the same folder as your code</p>
         </section>
       </section>
 
