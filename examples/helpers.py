@@ -33,7 +33,11 @@ def remove_punctuation(line):
     Given a string, remove punctuation characters other than - or ' and return
     the resulting string
     """
-    return line.translate(string.maketrans('', ''), PUNCTUATION_CHARS)
+    print(line)
+    print(PUNCTUATION_CHARS)
+    for punctuation in PUNCTUATION_CHARS:
+        line = line.replace(punctuation, '')
+    return line;
 
 
 def generate_cleaned_lines(filename):
