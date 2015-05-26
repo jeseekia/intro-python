@@ -23,31 +23,36 @@
   <script src="lib/js/html5shiv.js"></script>
   <![endif]-->
 </head>
-    <body>
-        <div class="reveal">
-            <!-- Any section element inside of this container is displayed as a slide -->
-            <div class="slides">
-              <!-- Opening slide -->
-                <section>
-                    <img src = "images/gdi_logo_badge.png">
-                    <h3>Intro to Python</h3>
-                    <h4>Class 4</h4>
-                </section>
+<body>
+  <div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+      <!-- INTRO -->
+      <section>
+        <!-- Opening slide -->
+        <section>
+          <img src="images/gdi_logo_badge.png" class="img--bare" height="450px" />
+          <div class="box--small">
+            <h3><span class="green">Intro to Python</span><br/><small><span class="blue">Day 4</span></small></h3>
+            <p><small>Jeanette Head &nbsp; | &nbsp; @JeanetteHead17 &nbsp; | &nbsp; @gdiannarbor  &nbsp; | &nbsp; #GDIA2 &nbsp; | &nbsp; #IntroToPython</small></p>
+          </div>
+        </section>
 
-                <section>
-                    <h3>Review</h3>
-                    <ul>
-                        <li>Method calls</li>
-                        <li>Combining lists and dictionaries</li>
-                        <li>Builtins for collections</li>
-                    </ul>
-                </section>
+        <section>
+            <h3>Review</h3>
+            <ul class="box list--xtall copy--small">
+                <li>Method calls</li>
+                <li>Combining lists and dictionaries</li>
+                <li>Builtins for collections</li>
+            </ul>
+        </section>
+      </section>
 
                 <!-- Block 1  - Intro to Classes and OOP - 20 minutes -->
                 <section>
                   <h3>Functions on Dictionaries</h3>
                   <p></p>
-                  <pre><code contenteditable class="fragment python">
+                  <pre><code contenteditable class=" python">
 character = {
 'x': 10,
 'y': 20,
@@ -68,15 +73,16 @@ if character['health'] < 0:
 
                 <section>
                   <h3>Functional Python</h3>
-                  <p>A <strong>Functional Programming</strong> is programming without assignment statements</p>
-                  <p class="fragment">Purely functional code and languages exist, but it is more common to use functional alongside declarative programming.  Python is a not a purely functional language, but it can be used (and is commonly used) for functional programming</p>
-                  <p class="fragment">There are four functions that are used for functional programming: Range, Filter, Map, and Reduce</p>
+                  <p class="box--small"><strong>Functional Programming</strong> is programming<br/><em>without assignment statements</em>.</p>
+                  <p class=" copy--small box--small fragment">Purely functional code and languages exist, but it is more common to use functional alongside declarative programming.</p>
+                  <p class="copy--small box--small fragment">Python is a not a purely functional language, but it can be used (and is commonly used) for functional programming.</p>
+                  <p class="copy--small box--small fragment">There are four functions that are used for functional programming: Range, Filter, Map, and Reduce</p>
                 </section>
 
                 <section>
                   <h3>Functional Python: Range</h3>
-                  <p class="fragment">We already learned range</p>
-                  <p class="fragment">What do the following functions output?</p>
+                  <p class="fragment box--small">We already learned range</p>
+                  <p class="fragment box--small copy--small">What do the following functions output?</p>
                   <pre><code contenteditable class="small fragment python">
 range(5)
                   </code></pre>
@@ -93,8 +99,8 @@ range(20, 8, -2)
 
                 <section>
                     <h3>Functional Python: Map</h3>
-                    <p class="fragment">One commonly used higher order function that is a Python builtin is called <strong>map</strong></p>
-                    <pre><code contenteditable class="fragment python">
+                    <p class="copy--small box--small">One commonly used, higher order function<br/>(that is a Python builtin) is called <strong>map</strong></p>
+                    <pre><code contenteditable class=" python">
 # Define any function
 def sqaure(number):
     return number ** 2
@@ -106,44 +112,44 @@ squares = map(square, range(10))
 
                 <section>
                     <h3>Let's Develop It</h3>
-                    <p class="fragment">Write a function that prints the double of every number from 0 to 10 using a for loop</p>
-                    <p class="fragment">Write a function that prints the double of every number from 0 to 10 using a range</p>
-                    <p class="fragment">Write a function that prints the double of every number from 0 to 10 using a map</p>
-                    <p class="fragment">Write a map that takes in a list and appends ' or I'll be a monkey's uncle' to every item in that list.  (input: [1,4], output: ["1 or I'll be a monkey's uncle"], "2 or I'll be a monkey's uncle"])</p>
+                    <p class="box--small copy--small fragment">Write a function that prints the double<br/>of every number from 0 to 10 using a for loop</p>
+                    <p class="box--small copy--small fragment">Write a function that prints the double<br/>of every number from 0 to 10 using a range</p>
+                    <p class="box--small copy--small fragment">Write a function that prints the double<br/>of every number from 0 to 10 using a map</p>
+                    <p class="box--small copy--small fragment">Write a map that takes in a list and appends " or I'll be a monkey's uncle" to every item in that list.  (input: [1,4], output: ["1 or I'll be a monkey's uncle"], "2 or I'll be a monkey's uncle"])</p>
                 </section>
 
                 <section>
                     <h3>Let's Develop It</h3>
-                    <p>Choose among any of these projects (Resources available on the next page):</p>
-                    <ul>
-                        <li>Search the Web - Write a program that searches the web using DuckDuckGo and displays results.
+                    <p class="box--small copy--small">Choose among any of these projects:<br/><small>(Resources available on the next page)</small></p>
+                    <ul class="copy--xsmall list--tall">
+                        <li><strong>Search the Web </strong>- Write a program that searches the web<br/>using DuckDuckGo and displays results.
                         </li>
-                        <li>Encryption - Write a program that encrypts a string from user input, or file and is able to decrypt it as well.
+                        <li><strong>Encryption </strong>- Write a program that encrypts a string from<br/>user input, or file and is able to decrypt it as well.
                         </li>
-                        <li>Command Line Game - Create a simple game that runs inside the terminal.
+                        <li><strong>Command Line Game </strong>- Create a simple game that runs inside the terminal.
                         </li>
                 </section>
 
                 <section>
                     <h3>Let's Develop It Resources</h3>
-                    <table>
+                    <table class="copy--small box">
                         <tr>
-                            <td>Search the Web</td>
-                            <td><a href="https://github.com/crazedpsyc/python-duckduckgo/">python-duckduckgo</a> library to get started. Download duckduckgo.py and put it in the same directory as your code. Use the query() function it provides to begin. (HINT: Results are often empty, but 'related' list usually has a few hits.)</td>
+                            <td style="width: 250px;">Search the Web</td>
+                            <td style="padding-bottom: 20px;"><a href="https://github.com/crazedpsyc/python-duckduckgo/">python-duckduckgo</a> library to get started. Download duckduckgo.py and put it in the same directory as your code. Use the query() function it provides to begin. (HINT: Results are often empty, but 'related' list usually has a few hits.)</td>
                         </tr>
                         <tr>
                             <td>Encryption</td>
                             <td>Read about the <a href="https://en.wikipedia.org/wiki/Caesar_cipher">Caesar Cipher</a> or find a similarly simple encryption mechanism online. You should find the ord() and chr() functions helpful, as well as the modulus operator '%'</td>
                         </tr>
                     </table>
-                    <p>continued on next page...</p>
+                    <p class="copy--xsmall box--small">continued on next page...</p>
                 </section>
 
                 <section>
                     <h3>Let's Develop It Resources Continued</h3>
-                    <table>
+                    <table class="copy--small box">
                         <tr>
-                            <td>Command Line Game</td>
+                            <td style="width: 250px;">Command Line Game</td>
                             <td>This might be a text adventure with paragraphs of text followed by a series of choices for the user. A choice maps to another node in the story (another paragraph with choices). You might try storing the paragraphs separately in a text file. The format might be something different, such as a series of "rooms", each with a description, for the user to explore by entering commands such as "go west". Examples of these kinds of games are <a href="https://en.wikipedia.org/wiki/Colossal_Cave_Adventure">Colossal Cave Adventure</a> and <a href="https://en.wikipedia.org/wiki/Zor">Zork</a></td>
                         </tr>
                     </table>
@@ -151,67 +157,71 @@ squares = map(square, range(10))
 
                 <section>
                     <h3>Future Resources</h3>
-                    <p></p>
-                    <table>
+                    <table class="box copy--xsmall">
                         <tr>
-                            <td><a href="http://docs.python.org/2/">Python.org Documentation</a></td>
-                            <td>Official Python Documentation</td>
+                            <td style="width: 360px;"><a href="http://docs.python.org/2/">Python.org Documentation</a></td>
+                            <td style="padding-bottom: 20px;">Official Python Documentation</td>
                         </tr>
                         <tr>
                             <td><a href="http://www.greenteapress.com/thinkpython/html/index.html">Think Python</a></td>
-                            <td>Online and print book with exercises.</td>
+                            <td style="padding-bottom: 20px;">Online and print book with exercises.</td>
                         </tr>
                         <tr>
                             <td><a href="http://learnpythonthehardway.org/book/">Learn Python the Hard Way</a></td>
-                            <td>Online and print book with exercises</td>
+                            <td style="padding-bottom: 20px;">Online and print book with exercises</td>
                         </tr>
                         <tr>
                             <td><a href="https://developers.google.com/edu/python/">Google's Python Class</a></td>
-                            <td>Video lectures coupled with exercises</td>
+                            <td style="padding-bottom: 20px;">Video lectures coupled with exercises</td>
                         </tr>
                         <tr>
                             <td><a href="http://newcoder.io/tutorials/">New Coder</a></td>
-                            <td>Ideas for slightly larger projects and resources to get you started. Projects include accessing API's, scraping pages, writing IRC bots, and others.</td>
+                            <td style="padding-bottom: 20px;">Ideas for slightly larger projects and resources to get you started. Projects include accessing API's, scraping pages, writing IRC bots, and others.</td>
                         </tr>
                         <tr>
                             <td><a href="http://girldevelopit.com/">Girl Develop It</a></td>
-                            <td>Local workshops, events, and coding sessions</td>
+                            <td style="">Local workshops, events, and coding sessions</td>
                         </tr>
                     </table>
                 </section>
 
-                <section>
-                    <h3>Questions?</h3>
-                </section>
+      <section>
+        <section>
+            <h3>Questions?</h3>
+        </section>
 
-                <section>
-                  <h3>Upcoming Events</h3>
-                  <div class="left" style="width: 45%;font-size: 80%;">
-                    <strong class="green">Core Team Planning session</strong>
-                    <p>Feb. 6th, 6pm - 8pm</p>
-                    <p style="color:#999">InspiringApps</p>
-                  <strong class="blue">Intro to Servers</strong>
-                    <p>Feb. 8th &amp; 9th, 1pm - 5pm</p>
-                    <p style="color:#999">Simple Energy</p>
-                  </div>
-                  <div class="right" style="width: 45%;font-size: 80%;">
-                  <strong class="green">Code &amp; Coffee - Boulder</strong>
-                    <p>Feb. 15th, 10am - 1pm</p>
-                    <p style="color:#999">The Cup</p>
-                  <strong class="blue">Intermediate Git &amp; GitHub</strong>
-                    <p>Feb. 24th &amp; 9th, 6:3pm - 9pm</p>
-                    <p style="color:#999">Simple Energy</p>
-                  </div>
-                </section>
-
-            </div>
-            <footer>
-                <div class="copyright">
-                    Intro to Python ~ Girl Develop It ~
-                    <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+            <!-- Upcoming Events -->
+            <section>
+                <h3>Upcoming Events</h3>
+                <div class="box">
+                    <h3 class="event__title"><span class="blue">1-Year Anniversary<br/><small><span class="green">Fundraiser</span></small></span></h3>
+                    <h3 class="event__title"><small>Thursday 6/4 @ The Forge (Pillar)</small></h3>
+                    <p><small>6pm - 9pm &nbsp; | &nbsp; 301 E Liberty St, Ann Arbor</small></p>
+                    <div class='copy--small box--small'>
+                      <a href="http://bit.ly/gdia2-anniversary">bit.ly/gdia2-anniversary</a>
+                    </div>
                 </div>
-            </footer>
-        </div>
+                <aside class="notes"></aside>
+            </section>
+
+        <section>
+          <img src="images/gdi_logo_badge.png" class="img--bare" height="450px" />
+          <div class="box--small">
+            <h3><span class="green">Intro to Python</span></h3>
+            <p><small>Jeanette Head &nbsp; | &nbsp; @JeanetteHead17 &nbsp; | &nbsp; @gdiannarbor  &nbsp; | &nbsp; #GDIA2 &nbsp; | &nbsp; #IntroToPython</small></p>
+          </div>
+        </section>
+      </section>
+
+    </div>
+
+    <footer>
+      <div class="copyright">
+        @gdiannarbor  &nbsp; | &nbsp; #GDIA2 &nbsp; | &nbsp; #IntroToPython &nbsp;
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+      </div>
+    </footer>
+</div>
 
   <script src="js/jquery.min.js"></script>
   <script src="js/reveal.min.js"></script>
