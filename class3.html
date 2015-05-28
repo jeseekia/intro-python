@@ -71,11 +71,6 @@
 def absolute_difference(value_a, value_b):
     return abs(value_a - value_b)
 
-def find_width_height(x1, y1, x2, y2):
-    width = absolute_difference(x1, x2)
-    height = absolute_difference(y1, y2)
-    return width, height
-
 def get_hypotenuse(a, b):
     return sqrt(a ** 2 + b ** 2)
 
@@ -83,7 +78,8 @@ def get_area_rectangle(width, height):
     return width * height
 
 def print_area_and_hypotenuse(x1, y1, x2, y2):
-    width, height = find_width_height(x1, y1, x2, y2)
+    width = absolute_difference(x1, x2)
+    height = absolute_difference(y1, y2)
     area = get_area_rectangle(width, height)
     hypotenuse = get_hypotenuse(width, height)
     print('Area of the rectangle is:')
@@ -98,18 +94,19 @@ def print_area_and_hypotenuse(x1, y1, x2, y2):
             <h3>Function Composition</h3>
             <p class="copy--small box--small"><strong>Function composition</strong> is when the <span class="blue">output</span><br/>of one function <span class="green">acts as the input</span> of another</p>
             <div class="fragment">
-            <pre><code contenteditable class=" python">from math import sqrt
+              <pre><code contenteditable class=" python">from math import sqrt
 
-def find_width_height(x1, y1, x2, y2):
-    return abs(x1 - x2), abs(y1 - y2)
+def find_distance(p1, p2):
+    return abs(p1 - p2)
 
 def get_hypotenuse(a, b):
     return sqrt(a ** 2 + b ** 2)
 
 def print_hypotenuse(x1, y1, x2, y2):
     print('The diagonal of the rectangle is:')
-    print(get_hypotenuse(find_width_height(x1, y1, x2, y2)))
+    print(get_hypotenuse(find_distance(x1, x2), find_distance(y1, y2)))
 
+print_hypotenuse(1,2,3,4)
 
 # f(g(x))
 # is the same as:
