@@ -39,38 +39,6 @@
           </div>
         </section>
 
-        <!-- About Me -->
-        <!-- <section>
-          <h3>About Jeanette</h3>
-          <div class="box">
-            <p> Software Consultant &amp; Developer at <span class="green">Atomic Object</span></p>
-            <p> Organizer of <span class="pink">Ann Arbor Pyladies</span></p>
-            <div class="box">
-              <span class="green">Skateboarder - </span>
-              <span class="red">Snowboarder - </span>
-              <span class="yellow">Doctor Who fan - </span><br/>
-              <span class="blue">Harry Potter fan - </span>
-              <span class="pink">board game player</span>
-            </div>
-            <p class="box copy--small">Looking forward to learning more skateboarding this summer </p>
-            <aside class="notes"></aside>
-          </div>
-        </section> -->
-        <!-- TODO Jeanette -->
-
-        <!-- Meet the Team -->
-        <!-- <section>
-          <h3>Meet the team!</h3>
-          <div class="box">
-            <ol class="list--tall">
-              <li>What is your <span class="green">name</span>?</li>
-              <li>What do you hope to get out of <span class="yellow">this class</span>?</li>
-              <li>What are you looking forward to this <span class="pink">summer</span>?</li>
-            </ol>
-            <aside class="notes"></aside>
-          </div>
-        </section> -->
-
         <section>
           <h3>What we will cover today</h3>
           <ul class="list--xtall box--small copy--small">
@@ -79,6 +47,20 @@
             <li class ="fragment">Variables and arithmetic</li>
             <li class ="fragment">Statements and Error Messages</li>
             <li class ="fragment">Development Environment Setup</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Scary things we'll be facing</h3>
+          <ul class="list--xtall box--small copy--small">
+              <li class="fragment">Command line</li>
+              <li class="fragment">Writing code</li>
+              <li class="fragment">Learning new things</li>
+              <li class="fragment">Code that won't run</li>
+              <li class="fragment">Code not working</li>
+              <li class="fragment">Asking questions in a room full of people</li>
+              <li class="fragment">Asking "experts" beginner questions</li>
+              <li class="fragment">Not getting it</li>
           </ul>
         </section>
       </section>
@@ -183,19 +165,18 @@
               </li>
               <li>
                   <a href="http://www.python.org/download/" target="_blank">Install Python 3</a>
-                  <br/><small>(This step is for Windows users only. GNU/Linux and Mac OS X come with Python installed!)</small>
               </li>
               <li>
                   <strong>Windows Users:</strong> After installing Python, open the "powershell" program and type:
-                  <br/><code class="copy--xsmall">[Environment]::SetEnvironmentVariable("Path", "$env:Path;C:\Python34", "User")</code>
+                  <br/><code class="copy--xsmall">[Environment]::SetEnvironmentVariable("Path", "$env:Path;C:\Python35", "User")</code>
               </li>
               <li>
-                  Locate and run the terminal program. Type <code>python</code> and hit enter.
+                  Locate and run the terminal program. Type <code>python3</code> and hit enter.
               </li>
               <li>
                   More setup instructions are available:
                   <a href="http://learnpythonthehardway.org/book/ex0.html" target="_blank">here</a>
-                  <br/><small>(You can, but don't have to install the other text editors recommended in this guide)</small>
+                  <br/><small>(Unlike these instructions, install Python 3, not Python 2. You can, but don't have to install the other text editors recommended in this guide)</small>
               </li>
           </ul>
       </section>
@@ -203,9 +184,10 @@
       <!-- Block 2: 30 minutes -->
       <section>
           <h3>Let's Develop It!<br/><small><span class="blue">Working in the Python Shell</span></small></h3>
-          <p class="box--small">Open up your terminal and type <code>python</code></p>
-          <p class="fragment copy--small box--small">Follow along with the examples in the upcoming slides.<br/>Just type them right in!</p>
+          <p class="box--small">Open up your terminal and type <code>python3</code></p>
+          <p class="fragment copy--small box--small">Follow along with the examples in the upcoming slides.<br/><strong>Just type them right in!</strong></p>
           <p class="fragment copy--small box--small">Feel free to explore, as well.<br/>You will not accidentally break things!</p>
+          <p class="fragment box--small copy--xsmall">When you're done, type <code>exit()</code> to close the Python shell</p>
       </section>
 
       <!-- Variables & Arithmatic -->
@@ -317,8 +299,8 @@ print(a / 6)
 
 # NameError - Using a name that hasn't been defined yet
 a = 5
-print(b)
-b = 10
+print(d)
+d = 10
 
 # TypeError - Using an object in a way that its type does not support
 'string1' - 'string2'
@@ -339,7 +321,7 @@ b = 10
       <!-- DEV ENV SETUP : 30 Minutes -->
       <section>
         <section>
-            <h3>Using the Terminal</h3>
+            <h3>Using the Terminal (OSX) or PowerShell (Windows)</h3>
             <p class="copy--small box--small">Try each of the following commands in turn:</p>
             <table class="copy--xsmall" style='line-height: 1.5'>
                 <tr>
@@ -402,7 +384,7 @@ print('I am a Python program!')
                 </li>
                 <li class="fragment">Click "File", then "Save As...". Type "class1.py" and click "Save".</li>
                 <li class="fragment">Open a terminal and navigate to the <code>gdi-intro-python</code> folder.<br/><small>If you don't already have this folder open in a terminal.</small></li>
-                <li class="fragment">Type <code>python class1.py</code></li>
+                <li class="fragment">Type <code>python3 class1.py</code></li>
                 <li class="fragment">You should see the terminal print "I am a Python program!"</li>
             </ul>
         </section>
@@ -455,6 +437,14 @@ print(area)
 >> Your total with sales tax is: (total with sales tax)
 (wait for input before exiting)
           </code></pre></div>
+        </section>
+
+        <section>
+          <h3>Want help?</h3>
+          <div class="box">
+            <p class="box"><a href="https://gdiaa.slack.com/messages/0516-intro-python/details/" target="_blank" class="roll"><span>#0516-intro-python</span></a></p>
+            <p><small>Not on Slack? <a target="_blank" href="http://bit.ly/gdiaa-slack" class="roll"><span data-title="bit.ly/gdiaa-slack">bit.ly/gdiaa-slack</span></a></small></p>
+          </div>
         </section>
 
         <section>
