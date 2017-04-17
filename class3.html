@@ -90,30 +90,6 @@ def print_area_and_hypotenuse(x1, y1, x2, y2):
           </div>
         </section>
 
-        <section>
-            <h3>Function Composition</h3>
-            <p class="copy--small box--small"><strong>Function composition</strong> is when the <span class="blue">output</span><br/>of one function <span class="green">acts as the input</span> of another</p>
-            <div class="fragment">
-              <pre><code contenteditable class=" python">from math import sqrt
-
-def find_distance(p1, p2):
-    return abs(p1 - p2)
-
-def get_hypotenuse(a, b):
-    return sqrt(a ** 2 + b ** 2)
-
-def print_hypotenuse(x1, y1, x2, y2):
-    print('The diagonal of the rectangle is:')
-    print(get_hypotenuse(find_distance(x1, x2), find_distance(y1, y2)))
-
-print_hypotenuse(1,2,3,4)
-
-# f(g(x))
-# is the same as:
-#     y = g(x)
-#     f(y)
-            </code></pre></div>
-        </section>
       </section>
 
       <section>
