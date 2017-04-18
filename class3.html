@@ -91,58 +91,60 @@ def print_area_and_hypotenuse(x1, y1, x2, y2):
         </section>
 
         <section>
-            <h3>Function Composition</h3>
-            <p class="copy--small box--small"><strong>Function composition</strong> is when the <span class="blue">output</span><br/>of one function <span class="green">acts as the input</span> of another</p>
-            <div class="fragment">
-              <pre><code contenteditable class=" python">from math import sqrt
-
-def find_distance(p1, p2):
-    return abs(p1 - p2)
-
-def get_hypotenuse(a, b):
-    return sqrt(a ** 2 + b ** 2)
-
-def print_hypotenuse(x1, y1, x2, y2):
-    print('The diagonal of the rectangle is:')
-    print(get_hypotenuse(find_distance(x1, x2), find_distance(y1, y2)))
-
-print_hypotenuse(1,2,3,4)
-
-# f(g(x))
-# is the same as:
-#     y = g(x)
-#     f(y)
-            </code></pre></div>
-        </section>
-      </section>
-
-      <section>
-        <section>
             <h3>Remember</h3>
             <p class="copy--small box"><strong>Functions</strong> are called by their name - <code>my_function()</code></p>
             <p class="copy--small box">They can be passed data in the form of parameters - <code>my_function(my_parameter)</code></p>
             <p class="copy--small box">They usually return some sort of value. This all happens explicitly.</p>
         </section>
+
+      </section>
+
+      <section>
         <section>
           <h3>Method Calls</h3>
             <p class="copy--small box"><strong>Methods</strong> are also called by name but are associated with an object.<br/><small>Really, they are identical to functions except that the data passed into it is passed implicitly.</small></p>
             <p class="copy--xsmall box fragment">For example, the integers and strings we've been using have methods attached to them.</p>
-            <p class="copy--xsmall box fragment">We can use the <code>dir()</code> function to see the methods of an object<br/>and <code>help()</code> to see what they do.</p>
-            <div class="fragment"><pre><code contenteditable class=" small python">a = 4
-print(dir(a))
-
+            <div class="fragment"><pre><code contenteditable class=" small python">
 name = 'caleb'
 sentence = 'the quick brown fox did the thing with the thing'
-print(dir(name))
 
 print(name.capitalize())
 print(sentence.count('the'))
-
-help(name.upper)
             </code></pre></div>
         </section>
 
+        <section>
+          <h3>String Indexing</h3>
+          <p class="copy--xsmall box fragment">Python strings include methods for accessing specific characters, or substrings.</p>
+          <p class="copy--xsmall box fragment">To index from the back of the string, use negative numbers.</p>
+          <div class="fragment"><pre><code contenteditable class=" small python">
+sentence = 'Hello World'
+print(sentence[0]) # prints 'H'
+print(sentence[0:5]) # prints 'Hello'
+print(sentence[-5]) # prints 'W'
+print(sentence[-5:]) # prints 'World'
+
+          </code></pre></div>
+      </section>
+
+      <section>
+        <h3>String Manipulation</h3>
+        <p class="copy--xsmall box fragment">There are also methods available for manipulating and changing the values of a string</p>
+        <div class="fragment"><pre><code contenteditable class=" small python">
+sentence = 'Hello World'
+print(sentence.split()) # prints a list: ['Hello', 'World']
+
+shopping_list = ['apples', 'bananas', 'grapes']
+print(', '.join(shopping_list))
+        </code></pre></div>
+      </section>
+
         <!-- Let's develop it: 5 minutes -->
+        <section>
+            <h3>Let's Develop It</h3>
+            <ul class="list--xtall copy--small box--small">
+                <li>Write a program with a function called pigLatin that takes in a word, and prints that word in Pig Latin (that is, move the first letter to the end of the word and add "-ay"). Call the function 3 times with 3 different words.</li>
+        </section>
         <section>
             <h3>Let's Develop It</h3>
             <p class="copy--small box--small">Open a Python shell and define a string varaible</p>
@@ -163,6 +165,9 @@ help(name.upper)
 words = ['list', 'of', 'strings']
             </code></pre>
             </div>
+        </section>
+        <section>
+            <h3>Multi-type Lists</h3>
             <div class="fragment">
             <p class="copy--small box--small">A list can, but doesn't have to be of all one type.<br/><small>A list of one type is <strong>homogenous</strong> as opposed to a list of multiple types, which is <strong>heterogeneous</strong>.</small></p>
             <pre><code contenteditable class="small python">
@@ -182,8 +187,6 @@ to_dos.append('buy soy milk')
 to_dos.append('install git')
 print(to_dos)
             </code></pre></div>
-            <p class="copy--small box--small fragment">Therefore, lists are <strong>mutable</strong></p>
-            <p class="copy--small box--small fragment">This means that a list can change values<br/>during the duration of a program</p>
         </section>
 
         <section>
@@ -225,16 +228,17 @@ to_dos = [
 print(to_dos[0])
 print(to_dos[1])
 
-print(to_dos[len(to_dos) - 1])
+print(to_dos[-1])
             </code></pre>
-            <p class="box--small copy--xsmall fragment">An IndexError results if an index exceeds the length of the list minus 1</p>
+            <p class="box--smal copy--xsmall fragment">Python can index from the end of a string by using negative numbers</p>
+            <p class="box--small copy--xsmall fragment">An IndexError results if an index is larger than the list size</p>
         </section>
       </section>
 
       <section>
         <section>
             <h3>Dictionaries</h3>
-            <p class="box--small copy--small">A <strong>dictionary</strong> (sometimes called a "hashmap") is a collection of key/value pairs, defined with <code>{}</code></p>
+            <p class="box--small copy--small">A <strong>dictionary</strong> is a collection of key/value pairs, defined with <code>{}</code></p>
             <pre><code contenteditable class="small python">
 menu_categories = {
     'food': 'stuff you eat',
@@ -247,7 +251,7 @@ menu_categories = {
 
         <section>
             <h3>Indexing on Dictionaries</h3>
-            <p class="box--small copy--small">Dictionaries aren't literally just for definitions. They represent a group of mappings. A mapping might be: menu items -> costs.</p>
+            <p class="box--small copy--small">Dictionaries aren't just for definitions. They represent a group of mappings. A mapping might be: menu items -> costs.</p>
             <p class="box--small copy--small fragment">We can also index on dictionaries.</p>
             <div class="fragment">
             <p class="box--small copy--small">The most common indexes are strings,<br/>but they can be whatever type the keys are.</p>
@@ -282,35 +286,6 @@ print(menu.get('juice', 5))
             <p class=" box--small copy--small"><code>get</code> will return None if the key isn't present<br/>or a default value if provided.</p>
         </section>
 
-        <section>
-            <h3>The in operator</h3>
-            <p class="box--small copy--small">The <code>in</code> operator is used to determine if<br/>an element is in a given collection</p>
-            <div class="fragment"><p class="box--small copy--small ">For dictionaries, the keys are searched for the element.</p>
-            <pre><code contenteditable class="small python">
-color = [255, 255, 0]
-if 0 in color:
-    print('0 is in the color')
-
-menu = {'tofu': 4}
-print('tofu' in menu)
-
-names = ['Mary', 'Martha', 'George']
-george_present = 'George' in names
-            </code></pre></div>
-        </section>
-
-        <!-- Let's develop it: 15 minutes -->
-        <section>
-            <h3>Let's Develop It</h3>
-            <p class="box copy--small">Write a program that opens a text file and does some processing.</p>
-            <ul class="list--xtall copy--xsmall">
-                <li>The program should take a word as input and determine if the word appears in the file</li>
-                <li>The program should use at least one function to do its work and you should be able to import this function in a Python shell and call it with a word and filename</li>
-                <li>Use the functions from <a href="http://www.gdiannarbor.com/events/intro-python/examples/helpers.py">helpers.py</a> to help with reading in the lines and/or words of the file</li>
-                <li>Download a book in plain text from <a href="http://www.gutenberg.org/wiki/Main_Page">Project Gutenburg</a> and put it into the same directory as your python file.</li>
-            </ul>
-            <p class="box copy--small">The next slide has some code and other<br/>resources that should help you get started</p>
-        </section>
 
         <section>
             <h3>Let's Develop It- Example Code</h3>
@@ -333,111 +308,6 @@ answer = is_word_in_file(input_word, 'pride.txt')
       </section>
 
       <!-- Block 3 20 minutes -->
-      <section>
-        <section>
-            <h3>Lists of ... Lists</h3>
-            <p class="copy--small box--small">Lists can contain not only numbers or strings, but also other lists.</p>
-            <p class="copy--small box--small fragment">Such a structure is said to be  <strong>nested</strong></p>
-            <div class="fragment"><p class="copy--small box--small">The following is a list of lists:</p>
-            <pre><code contenteditable class="small python">
-game_board = [
-    ['O', 'X', ' '],
-    [' ', 'X', ' '],
-    [' ', ' ', ' '],
-]
-            </code></pre></div>
-            <p class="copy--small box--small fragment">This can be indexed successively with <code>game_board[0][1]</code></p>
-        </section>
-        <section>
-            <h3>Nested Lists continued</h3>
-            <p class="copy--small box--small">A list can be appended to a list as well</p>
-            <pre><code contenteditable class="small python">
-mary_to_dos = ['eat', 'work', 'pick up laundry', 'care for baby', 'sleep']
-fran_to_dos = ['eat', 'work', 'call plumber', 'sleep']
-baby_to_dos = ['eat', 'sleep']
-
-all_to_dos = []
-all_to_dos.append(mary_to_dos)
-all_to_dos.append(fran_to_dos)
-all_to_dos.append(baby_to_dos)
-
-print(all_to_dos)
-
-for to_dos in all_to_dos:
-    for to_do in to_dos:
-        print(to_do)
-            </code></pre>
-            <p class="copy--small box--small fragment">What if we want to <strong>flatten</strong> the to do's?</p>
-            <p class="copy--small box--small fragment">What if we want the to do's to be unique?</p>
-        </section>
-
-        <section>
-            <h3>Lists of Dictionaries</h3>
-            <p class="copy--small box--small">One of the most common and useful nested data structures,<br/>is a list of dictionaries</p>
-            <pre><code contenteditable class="python">
-card_a = {
-    'suit': 'spades',
-    'number': 4,
-}
-
-card_b = {
-    'suit': 'hearts',
-    'number': 8,
-}
-
-hand = [card_a, card_b]
-
-print('The hand contains:')
-for card in hand:
-    print('A', card['number'], 'of', card['suit'])
-            </code></pre>
-        </section>
-
-        <section>
-            <h3>Dictionary of Lists</h3>
-            <p class="copy--small box--small">A dictionary can also contain values that are themselves<br/>other collections, such as lists.</p>
-            <div class="fragment"><p class="copy--xsmall box--small">Let's revisit the group of to do lists and find a better representation:</p>
-            <pre><code contenteditable class="small python">
-mary_to_dos = ['eat', 'work', 'pick up laundry', 'care for baby', 'sleep']
-fran_to_dos = ['eat', 'work', 'call plumber', 'sleep']
-baby_to_dos = ['eat', 'sleep']
-
-all_to_dos = {
-    'mary': mary_to_dos,
-    'fran': fran_to_dos,
-    'baby': baby_to_dos,
-}
-
-for name, to_dos in all_to_dos.items():
-    print(name, 'needs to: ', to_dos)
-
-# Changing this later can be accomplished with
-all_to_dos['baby'].append('cry')
-            </code></pre></div>
-            <p class="copy--xsmall box--small fragment">Now the to do lists can be indexed or modified by name</p>
-        </section>
-
-        <section>
-            <h3>Means of Combination</h3>
-            <p class="copy--small box--small">Lists, dictionaries, and other collections are all<br/>a means of combination.</p>
-            <p class="copy--small box--small fragment">They can be freely combined to create the<br/>data structure needed for a particular problem</p>
-            <div class="fragment"><p class="copy--xsmall box--small">Eg. A list of dictionaries with lists</p>
-            <pre><code contenteditable class="python">
-all_tweets = [
-    {
-        'author': 'mary',
-        'handle': '@hadalittlelamb',
-        'date': '2013-01-22',
-        'tweets': [
-            'at Loco Pops enjoying a Raspberry Sage popsicle',
-            'Learning Python is so much fun',
-        ],
-    },
-]
-            </code></pre></div>
-        </section>
-      </section>
-
       <section>
         <section>
             <h3>Builtins for collections</h3>
@@ -506,7 +376,7 @@ for width, height in zip(widths, heights):
         </section>
 
         <!-- Let's develop it: 25 minutes -->
-        <section>
+        <!-- <section>
             <h3>Let's Develop It</h3>
             <p class="copy--small box">Write a program that expands on your previous one.<br/>If it is unfinished, feel free to finish the original exercise first.<br/>To expand on it, choose one of the following:</p>
             <ul class="list--xtall copy--xsmall">
@@ -515,6 +385,33 @@ for width, height in zip(widths, heights):
                 <li>Use <a href="http://www.gdiannarbor.com/events/intro-python/examples/boilerplate.py">boilerplate.py</a> to help you improve the reusability of the program. (The comments in that file should explain the how and why)</li>
             </ul>
             <p class="copy--small box">Resources for this and the previous exercise<br/>are provided on the next slide for convenience</p>
+        </section> -->
+
+      </section>
+
+      <section>
+        <section>
+            <h3>Prep for Flask</h3>
+            <p class="box copy--small"><a href="http://flask.pocoo.org/">Flask</a></p>
+        </section>
+      </section>
+
+      <section>
+        <section>
+            <h3>Questions?</h3>
+        </section>
+
+        <!-- Let's develop it: 15 minutes -->
+        <section>
+            <h3>Let's Develop It</h3>
+            <p class="box copy--small">Write a program that opens a text file and does some processing.</p>
+            <ul class="list--xtall copy--xsmall">
+                <li>The program should take a word as input and determine if the word appears in the file</li>
+                <li>The program should use at least one function to do its work and you should be able to import this function in a Python shell and call it with a word and filename</li>
+                <li>Use the functions from <a href="http://www.gdiannarbor.com/events/intro-python/examples/helpers.py">helpers.py</a> to help with reading in the lines and/or words of the file</li>
+                <li>Download a book in plain text from <a href="http://www.gutenberg.org/wiki/Main_Page">Project Gutenburg</a> and put it into the same directory as your python file.</li>
+            </ul>
+            <p class="box copy--small">The next slide has some code and other<br/>resources that should help you get started</p>
         </section>
 
         <section>
@@ -539,12 +436,7 @@ answer = is_word_in_file(input_word, 'pride.txt')
 # Display the answer in some meaningful way
             </code></pre>
         </section>
-      </section>
 
-      <section>
-        <section>
-            <h3>Questions?</h3>
-        </section>
 
         <section>
           <h3>Homework</h3>
