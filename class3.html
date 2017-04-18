@@ -104,22 +104,47 @@ def print_area_and_hypotenuse(x1, y1, x2, y2):
           <h3>Method Calls</h3>
             <p class="copy--small box"><strong>Methods</strong> are also called by name but are associated with an object.<br/><small>Really, they are identical to functions except that the data passed into it is passed implicitly.</small></p>
             <p class="copy--xsmall box fragment">For example, the integers and strings we've been using have methods attached to them.</p>
-            <p class="copy--xsmall box fragment">We can use the <code>dir()</code> function to see the methods of an object<br/>and <code>help()</code> to see what they do.</p>
-            <div class="fragment"><pre><code contenteditable class=" small python">a = 4
-print(dir(a))
-
+            <div class="fragment"><pre><code contenteditable class=" small python">
 name = 'caleb'
 sentence = 'the quick brown fox did the thing with the thing'
-print(dir(name))
 
 print(name.capitalize())
 print(sentence.count('the'))
-
-help(name.upper)
             </code></pre></div>
         </section>
 
+        <section>
+          <h3>String Indexing</h3>
+          <p class="copy--xsmall box fragment">Python strings include methods for accessing specific characters, or substrings.</p>
+          <p class="copy--xsmall box fragment">To index from the back of the string, use negative numbers.</p>
+          <div class="fragment"><pre><code contenteditable class=" small python">
+sentence = 'Hello World'
+print(sentence[0]) # prints 'H'
+print(sentence[0:5]) # prints 'Hello'
+print(sentence[-5]) # prints 'W'
+print(sentence[-5:]) # prints 'World'
+
+          </code></pre></div>
+      </section>
+
+      <section>
+        <h3>String Manipulation</h3>
+        <p class="copy--xsmall box fragment">There are also methods available for manipulating and changing the values of a string</p>
+        <div class="fragment"><pre><code contenteditable class=" small python">
+sentence = 'Hello World'
+print(sentence.split()) # prints a list: ['Hello', 'World']
+
+shopping_list = ['apples', 'bananas', 'grapes']
+print(', '.join(shopping_list))
+        </code></pre></div>
+      </section>
+
         <!-- Let's develop it: 5 minutes -->
+        <section>
+            <h3>Let's Develop It</h3>
+            <ul class="list--xtall copy--small box--small">
+                <li>Write a program with a function called pigLatin that takes in a word, and prints that word in Pig Latin (that is, move the first letter to the end of the word and add "-ay"). Call the function 3 times with 3 different words.</li>
+        </section>
         <section>
             <h3>Let's Develop It</h3>
             <p class="copy--small box--small">Open a Python shell and define a string varaible</p>
@@ -140,6 +165,9 @@ help(name.upper)
 words = ['list', 'of', 'strings']
             </code></pre>
             </div>
+        </section>
+        <section>
+            <h3>Multi-type Lists</h3>
             <div class="fragment">
             <p class="copy--small box--small">A list can, but doesn't have to be of all one type.<br/><small>A list of one type is <strong>homogenous</strong> as opposed to a list of multiple types, which is <strong>heterogeneous</strong>.</small></p>
             <pre><code contenteditable class="small python">
@@ -159,8 +187,6 @@ to_dos.append('buy soy milk')
 to_dos.append('install git')
 print(to_dos)
             </code></pre></div>
-            <p class="copy--small box--small fragment">Therefore, lists are <strong>mutable</strong></p>
-            <p class="copy--small box--small fragment">This means that a list can change values<br/>during the duration of a program</p>
         </section>
 
         <section>
@@ -225,7 +251,7 @@ menu_categories = {
 
         <section>
             <h3>Indexing on Dictionaries</h3>
-            <p class="box--small copy--small">Dictionaries aren't literally just for definitions. They represent a group of mappings. A mapping might be: menu items -> costs.</p>
+            <p class="box--small copy--small">Dictionaries aren't just for definitions. They represent a group of mappings. A mapping might be: menu items -> costs.</p>
             <p class="box--small copy--small fragment">We can also index on dictionaries.</p>
             <div class="fragment">
             <p class="box--small copy--small">The most common indexes are strings,<br/>but they can be whatever type the keys are.</p>
@@ -260,35 +286,6 @@ print(menu.get('juice', 5))
             <p class=" box--small copy--small"><code>get</code> will return None if the key isn't present<br/>or a default value if provided.</p>
         </section>
 
-        <section>
-            <h3>The in operator</h3>
-            <p class="box--small copy--small">The <code>in</code> operator is used to determine if<br/>an element is in a given collection</p>
-            <div class="fragment"><p class="box--small copy--small ">For dictionaries, the keys are searched for the element.</p>
-            <pre><code contenteditable class="small python">
-color = [255, 255, 0]
-if 0 in color:
-    print('0 is in the color')
-
-menu = {'tofu': 4}
-print('tofu' in menu)
-
-names = ['Mary', 'Martha', 'George']
-george_present = 'George' in names
-            </code></pre></div>
-        </section>
-
-        <!-- Let's develop it: 15 minutes -->
-        <section>
-            <h3>Let's Develop It</h3>
-            <p class="box copy--small">Write a program that opens a text file and does some processing.</p>
-            <ul class="list--xtall copy--xsmall">
-                <li>The program should take a word as input and determine if the word appears in the file</li>
-                <li>The program should use at least one function to do its work and you should be able to import this function in a Python shell and call it with a word and filename</li>
-                <li>Use the functions from <a href="http://www.gdiannarbor.com/events/intro-python/examples/helpers.py">helpers.py</a> to help with reading in the lines and/or words of the file</li>
-                <li>Download a book in plain text from <a href="http://www.gutenberg.org/wiki/Main_Page">Project Gutenburg</a> and put it into the same directory as your python file.</li>
-            </ul>
-            <p class="box copy--small">The next slide has some code and other<br/>resources that should help you get started</p>
-        </section>
 
         <section>
             <h3>Let's Develop It- Example Code</h3>
@@ -379,7 +376,7 @@ for width, height in zip(widths, heights):
         </section>
 
         <!-- Let's develop it: 25 minutes -->
-        <section>
+        <!-- <section>
             <h3>Let's Develop It</h3>
             <p class="copy--small box">Write a program that expands on your previous one.<br/>If it is unfinished, feel free to finish the original exercise first.<br/>To expand on it, choose one of the following:</p>
             <ul class="list--xtall copy--xsmall">
@@ -388,6 +385,33 @@ for width, height in zip(widths, heights):
                 <li>Use <a href="http://www.gdiannarbor.com/events/intro-python/examples/boilerplate.py">boilerplate.py</a> to help you improve the reusability of the program. (The comments in that file should explain the how and why)</li>
             </ul>
             <p class="copy--small box">Resources for this and the previous exercise<br/>are provided on the next slide for convenience</p>
+        </section> -->
+
+      </section>
+
+      <section>
+        <section>
+            <h3>Prep for Flask</h3>
+            <p class="box copy--small"><a href="http://flask.pocoo.org/">Flask</a></p>
+        </section>
+      </section>
+
+      <section>
+        <section>
+            <h3>Questions?</h3>
+        </section>
+
+        <!-- Let's develop it: 15 minutes -->
+        <section>
+            <h3>Let's Develop It</h3>
+            <p class="box copy--small">Write a program that opens a text file and does some processing.</p>
+            <ul class="list--xtall copy--xsmall">
+                <li>The program should take a word as input and determine if the word appears in the file</li>
+                <li>The program should use at least one function to do its work and you should be able to import this function in a Python shell and call it with a word and filename</li>
+                <li>Use the functions from <a href="http://www.gdiannarbor.com/events/intro-python/examples/helpers.py">helpers.py</a> to help with reading in the lines and/or words of the file</li>
+                <li>Download a book in plain text from <a href="http://www.gutenberg.org/wiki/Main_Page">Project Gutenburg</a> and put it into the same directory as your python file.</li>
+            </ul>
+            <p class="box copy--small">The next slide has some code and other<br/>resources that should help you get started</p>
         </section>
 
         <section>
@@ -412,12 +436,7 @@ answer = is_word_in_file(input_word, 'pride.txt')
 # Display the answer in some meaningful way
             </code></pre>
         </section>
-      </section>
 
-      <section>
-        <section>
-            <h3>Questions?</h3>
-        </section>
 
         <section>
           <h3>Homework</h3>
