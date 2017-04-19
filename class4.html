@@ -73,7 +73,67 @@ def heal(character, amount):
                 </section>
             </section>
 
-            <section>
+            </section>
+
+            <section> <!-- Flask -->
+                <section>
+                    <h3>Flask</h3>
+                    <p class="box--small copy--small">Flask is a small Python framework for web development</p>
+                    <p class="box--small copy--small">It's easy to get up and running, and to start building your web server!</p>
+                </section>
+
+                <section>
+                    <h3>Flask's "Hello World"</h3>
+                        <pre><code contenteditable class=" python">
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello World!"
+
+if __name__ == "__main__":
+    app.run()
+                        </code></pre>
+                </section>
+
+                <section>
+                    <h3>Requests</h3>
+                    <pre><code contenteditable class=" python">
+@app.route('/')
+def hello():
+    return "Hello World!"
+                    </code></pre>
+                    <p class="box--small copy--small">When you type in a URL in your browser, your computer sends a "request" to the server.</p>
+                    <p class="box--small copy--small">That request tells the server what information you're looking for, and how to return it to you.</p>
+                    <p class="box--small copy--small">This is the code that runs when we request the '/' URL</p>
+                    <p class="box--small copy--small">To run this code, go to <a href='localhost:5000'>localhost:5000</a> in your browser (after running the hello world file).</p>
+                </section>
+
+                <section>
+                    <h3>Fancy URLs</h3>
+                    <p class="box--small copy--small">You can request data from other URLs on the same server, too!</p>
+                    <pre><code contenteditable class=" python">
+@app.route('/hi')
+def hi():
+    return "Hi there!"
+
+@app.route('/')
+def hello():
+    return "Hello World!"
+                    </code></pre>
+                    <p class="box--small copy--small">Try visiting <a href='localhost:5000/hi' target='_blank'>localhost:5000/hi</a> to check it out!</p>
+                    <p class="box--small copy--small">These URLs are called "endpoints"</p>
+                </section>
+
+                <section>
+                    <h3>Let's Develop It</h3>
+                    <p class="box--small copy--small">Write a function that prints "Hello" to the terminal when you make a request to a specific endpoint!</p>
+                </section>
+            </section> <!-- End Flask Intro -->
+
+
+            <section> <!-- Project Section -->
                 <section>
                     <h3>Let's Develop It</h3>
                     <p class="box--small copy--small">Choose among any of these projects:<br/><small>(Resources available on the next page)</small></p>
