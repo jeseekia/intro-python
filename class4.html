@@ -150,8 +150,62 @@ def say_hello(name):
                 <section>
                     <h3>Building Web Pages</h3>
                     <p class="box--small copy--small">So far, what we've done doesn't look much like a web page!</p>
+                    <p class="box--small copy--small">Flask comes with the ability to render HTML files into web pages.</p>
+                    <p class="box--small copy--small">Create a "templates" directory in your project.</p>
+                    <p class="box--small copy--small">Copy this code into templates/hello.html</p>
+                    <pre><code contenteditable class="html">
+&lt!doctype html>
+&lttitle>Hello from Flask&lt/title>
+&lth1>Hello World&lt/h1>
+                    </code></pre>
+                    <p class="box--small copy--small">Shameless plug: Check out our HTML/CSS class!</p>
                 </section>
+                <section>
+                    <h3>Displaying Web Pages</h3>
+                    <p class="box--small copy--small">Once we've defined our web page, we need to tell Flask to display it</p>
+                    <p class="box--small copy--small">This is also called rendering.</p>
+                    <p class="box--small copy--small">Make a new file called "rendering.py" (outside the templates directory).</p>
+                    <pre><code contenteditable class="python">
+from flask import Flask
+from flask import render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return render_template('hello.html')
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Templating</h3>
+                    <p class="box--small copy--small">With Flask, you can pass variables into your HTML file.</p>
+                    <p class="box--small copy--small">Edit your HTML file to look like this: </p>
+                    <pre><code contenteditable class="python">
+&lt!doctype html>
+&lttitle>Hello from Flask&lt/title>
+&lth1>Hello {{ name }} $lt/h1>
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Rendering Templates</h3>
+                    <p class="box--small copy--small">Now, we can change one line in our python file to look like this: </p>
+                    <pre><code contenteditable class="python">
+    return render_template('hello.html', name='Cam')
+                    </code></pre>
+                    <p class="box--small copy--small">And we'll be able to send data from our Python code into our HTML page.</p>
+                </section>
+
             </section> <!-- End Templating -->
+
+            <section> <!-- Sending your own requests -->
+                <section>
+                    <h3>Sending Requests</h3>
+                    <p class="box--small copy--small">To make it easier to build websites, you can use other people's data!</p>
+                    <p class="box--small copy--small">To do that, we need to learn a bit about the requests module</p>
+                </section>
+            </section>
 
             <section> <!-- POST requests -->
                 <section>
