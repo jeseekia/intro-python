@@ -48,7 +48,8 @@
         </section>
       </section>
 
-                <!-- Block 1  - Intro to Classes and OOP - 20 minutes -->
+            <!-- Block 1  - Intro to Classes and OOP - 20 minutes -->
+            <section>
                 <section>
                   <h3>Functions on Dictionaries</h3>
                   <p></p>
@@ -70,52 +71,159 @@ def heal(character, amount):
         character['health'] = 100
                   </code></pre>
                 </section>
+            </section>
 
+            </section>
+
+            <section> <!-- Flask -->
                 <section>
-                  <h3>Functional Python</h3>
-                  <p class="box--small"><strong>Functional Programming</strong> is programming<br/><em>without assignment statements</em>.</p>
-                  <p class=" copy--small box--small fragment">Purely functional code and languages exist, but it is more common to use functional alongside declarative programming.</p>
-                  <p class="copy--small box--small fragment">Python is a not a purely functional language, but it can be used (and is commonly used) for functional programming.</p>
-                  <p class="copy--small box--small fragment">There are four functions that are used for functional programming: Range, Filter, Map, and Reduce</p>
+                    <h3>Flask</h3>
+                    <p class="box--small copy--small">Flask is a small Python framework for web development</p>
+                    <p class="box--small copy--small">It's easy to get up and running, and to start building your web server!</p>
                 </section>
 
                 <section>
-                  <h3>Functional Python: Range</h3>
-                  <p class="box--small">We already learned range</p>
-                  <p class="box--small copy--small">What do the following functions output?</p>
-                  <pre><code contenteditable class="small python">
-range(5)
+                    <h3>Flask's "Hello World"</h3>
+                        <pre><code contenteditable class=" python">
+from flask import Flask
+app = Flask(__name__)
 
-range(5, 10)
-                  </code></pre>
-                  <pre><code contenteditable class="small python">
-range(10, 20, 2)
+@app.route("/")
+def hello():
+    return "Hello World!"
 
-range(20, 8, -2)
-                 </code></pre>
+if __name__ == "__main__":
+    app.run()
+                        </code></pre>
                 </section>
 
                 <section>
-                    <h3>Functional Python: Map</h3>
-                    <p class="copy--small box--small">One commonly used, higher order function<br/>(that is a Python builtin) is called <strong>map</strong></p>
+                    <h3>Requests</h3>
                     <pre><code contenteditable class=" python">
-# Define any function
-def sqaure(number):
-    return number ** 2
-
-# Pass the function to map along with an iterable
-squares = map(square, range(10))
+@app.route('/')
+def hello():
+    return "Hello World!"
                     </code></pre>
+                    <p class="box--small copy--small">When you type in a URL in your browser, your computer sends a "request" to the server.</p>
+                    <p class="box--small copy--small">That request tells the server what information you're looking for, and how to return it to you.</p>
+                    <p class="box--small copy--small">This is the code that runs when we request the '/' URL</p>
+                    <p class="box--small copy--small">To run this code, go to <a href='localhost:5000'>localhost:5000</a> in your browser (after running the hello world file).</p>
+                </section>
+
+                <section>
+                    <h3>Fancy URLs</h3>
+                    <p class="box--small copy--small">You can request data from other URLs on the same server, too!</p>
+                    <pre><code contenteditable class=" python">
+@app.route('/hi')
+def hi():
+    return "Hi there!"
+
+@app.route('/')
+def hello():
+    return "Hello World!"
+                    </code></pre>
+                    <p class="box--small copy--small">Try visiting <a href='localhost:5000/hi' target='_blank'>localhost:5000/hi</a> to check it out!</p>
+                    <p class="box--small copy--small">These URLs are called "endpoints"</p>
                 </section>
 
                 <section>
                     <h3>Let's Develop It</h3>
-                    <p class="box--small copy--small fragment">Write a function that prints the double<br/>of every number from 0 to 10 using a for loop</p>
-                    <p class="box--small copy--small fragment">Write a function that prints the double<br/>of every number from 0 to 10 using a range</p>
-                    <p class="box--small copy--small fragment">Write a function that prints the double<br/>of every number from 0 to 10 using a map</p>
-                    <p class="box--small copy--small fragment">Write a map that takes in a list and appends " or I'll be a monkey's uncle" to every item in that list.  (input: [1,4], output: ["1 or I'll be a monkey's uncle", "4 or I'll be a monkey's uncle"])</p>
+                    <p class="box--small copy--small">Write a function that prints "Hello" to the terminal when you make a request to a specific endpoint!</p>
+                </section>
+            </section> <!-- End Flask Intro -->
+
+            <section> <!-- Including Variables -->
+                <section>
+                    <h3>Variables</h3>
+                    <p class="box--small copy--small">With Flask, you can get input from the URL.</p>
+                    <p class="box--small copy--small">You just have to tell it what information you want.</p>
+                    <pre><code contenteditable class=" python">
+@app.route('/hello/&ltname>')
+def say_hello(name):
+    return 'Hello %s' % name
+                    </code></pre>
+                    <p class="box--small copy--small">Example URL: <a href='localhost:5000/hi/cam' target="_blank">localhost:5000/hi/cam</a></p>
+                </section>
+            </section>
+
+            <section> <!-- Templating -->
+                <section>
+                    <h3>Building Web Pages</h3>
+                    <p class="box--small copy--small">So far, what we've done doesn't look much like a web page!</p>
+                    <p class="box--small copy--small">Flask comes with the ability to render HTML files into web pages.</p>
+                    <p class="box--small copy--small">Create a "templates" directory in your project.</p>
+                    <p class="box--small copy--small">Copy this code into templates/hello.html</p>
+                    <pre><code contenteditable class="html">
+&lt!doctype html>
+&lttitle>Hello from Flask&lt/title>
+&lth1>Hello World&lt/h1>
+                    </code></pre>
+                    <p class="box--small copy--small">Shameless plug: Check out our HTML/CSS class!</p>
+                </section>
+                <section>
+                    <h3>Displaying Web Pages</h3>
+                    <p class="box--small copy--small">Once we've defined our web page, we need to tell Flask to display it</p>
+                    <p class="box--small copy--small">This is also called rendering.</p>
+                    <p class="box--small copy--small">Make a new file called "rendering.py" (outside the templates directory).</p>
+                    <pre><code contenteditable class="python">
+from flask import Flask
+from flask import render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return render_template('hello.html')
+                    </code></pre>
                 </section>
 
+                <section>
+                    <h3>Templating</h3>
+                    <p class="box--small copy--small">With Flask, you can pass variables into your HTML file.</p>
+                    <p class="box--small copy--small">Edit your HTML file to look like this: </p>
+                    <pre><code contenteditable class="python">
+&lt!doctype html>
+&lttitle>Hello from Flask&lt/title>
+&lth1>Hello {{ name }} $lt/h1>
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Rendering Templates</h3>
+                    <p class="box--small copy--small">Now, we can change one line in our python file to look like this: </p>
+                    <pre><code contenteditable class="python">
+    return render_template('hello.html', name='Cam')
+                    </code></pre>
+                    <p class="box--small copy--small">And we'll be able to send data from our Python code into our HTML page.</p>
+                </section>
+
+            </section> <!-- End Templating -->
+
+            <section> <!-- Sending your own requests -->
+                <section>
+                    <h3>Sending Requests</h3>
+                    <p class="box--small copy--small">To make it easier to build websites, you can use other people's data!</p>
+                    <p class="box--small copy--small">To do that, we need to learn a bit about the requests module</p>
+                </section>
+            </section>
+
+            <section> <!-- POST requests -->
+                <section>
+                    <h3>POST Requests</h3>
+                    <p class="box--small copy--small">So far, we've only been using GET requests.</p>
+                    <p class="box--small copy--small">GET requests are useful when you want to "get" information from another server.</p>
+                    <p class="box--small copy--small">When you want to send information, you use POST requests</p>
+                </section>
+                <section>
+                    <h3>Forms and Buttons</h3>
+                    <p class="box--small copy--small">An example of a POST request is when you submit information through a form.</p>
+                    <p class="box--small copy--small">Going back to last section, we'll build a quick form.</p>
+                    <!-- Code Example for Form -->
+                </section>
+            </section> <!-- End POST requests -->
+
+
+            <section> <!-- Project Section -->
                 <section>
                     <h3>Let's Develop It</h3>
                     <p class="box--small copy--small">Choose among any of these projects:<br/><small>(Resources available on the next page)</small></p>
@@ -157,6 +265,7 @@ squares = map(square, range(10))
                         </tr>
                     </table>
                 </section>
+            </section>
 
                 <section>
                     <h3>Future Resources</h3>
