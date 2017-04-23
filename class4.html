@@ -184,7 +184,7 @@ def hello():
                     <pre><code contenteditable class="python">
 &lt!doctype html>
 &lttitle>Hello from Flask&lt/title>
-&lth1>Hello {{ name }} $lt/h1>
+&lth1>Hello {{ name }} &lt/h1>
                     </code></pre>
                 </section>
 
@@ -199,13 +199,13 @@ def hello():
 
             </section> <!-- End Templating -->
 
-            <section> <!-- Sending your own requests -->
+            <!-- <section> <!- Sending your own requests ->
                 <section>
                     <h3>Sending Requests</h3>
                     <p class="box--small copy--small">To make it easier to build websites, you can use other people's data!</p>
                     <p class="box--small copy--small">To do that, we need to learn a bit about the requests module</p>
                 </section>
-            </section>
+            </section> -->
 
             <section> <!-- POST requests -->
                 <section>
@@ -219,6 +219,28 @@ def hello():
                     <p class="box--small copy--small">An example of a POST request is when you submit information through a form.</p>
                     <p class="box--small copy--small">Going back to last section, we'll build a quick form.</p>
                     <!-- Code Example for Form -->
+                    <pre><code contenteditable class="html">
+&lt!doctype html>
+
+&ltform action='/handle_request' method='post'>
+    &ltinput type="text" id="name" name="name">
+    &ltinput type="submit">
+&lt/form>
+                    </code></pre>
+
+                </section>
+
+                <section>
+                    <h3>Handling a POST request in Python</h3>
+                    <p class="box--small copy--small">You'll need a method like this:</p>
+                    <pre><code contenteditable class="python">
+from flask import request
+
+@app.route('/handle_request', methods=['POST'])
+def print_name():
+    name = request.form['name']
+    return name
+                    </code></pre>
                 </section>
             </section> <!-- End POST requests -->
 
