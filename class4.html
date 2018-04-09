@@ -1,58 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="utf-8">
 
-    <head>
-        <meta charset="utf-8">
+  <title>Introduction to Python | Girl Develop It Ann Arbor</title>
 
-        <title>Intro to Python ~ Girl Develop It</title>
+    <meta name="description" content="This is the official Girl Develop It Core Intro to Python course. The course is meant to be taught in four two-hour sessions. Each of the slides and practice files are customizable according to the needs of a given class or audience.">
 
-        <meta name="description" content="This is the official Girl Develop It Core Intro to Python course. The course is meant to be taught in four two-hour sessions. Each of the slides and practice files are customizable according to the needs of a given class or audience.">
-        <meta name="author" content="Girl Develop It">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="shortcut icon" href="favicon.ico">
 
-        <link rel="stylesheet" href="reveal/css/reveal.css">
-        <link rel="stylesheet" href="reveal/css/theme/gdilight.css" id="theme">
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/theme/gdiaa.css" id="theme">
+  <link rel="stylesheet" href="lib/css/rainbow.css">
+  <link rel="stylesheet" href="css/print/pdf.css" media="print">
 
-        <!-- For syntax highlighting -->
-        <!-- light editor<link rel="stylesheet" href="lib/css/light.css">-->
-        <!-- dark editor--><link rel="stylesheet" href="reveal/lib/css/dark.css">
+  <script src="lib/js/head.min.js"></script>
 
-        <!-- If use the PDF print sheet so students can print slides-->
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+      <!-- INTRO -->
+      <section>
+        <!-- Opening slide -->
+        <section>
+          <img src="images/gdi_logo_badge.png" class="img--bare" height="450px" />
+          <div class="box--small">
+            <h3><span class="green">Intro to Python</span><br/><small><span class="blue">Class 4</span></small></h3>
+            <p><small>@gdiannarbor  &nbsp; | &nbsp; #GDIA2 &nbsp; | &nbsp; #IntroToPython</small></p>
+          </div>
+        </section>
 
-        <link rel="stylesheet" href="reveal/css/print/pdf.css" type="text/css" media="print">
+        <section>
+            <h3>Review</h3>
+            <ul class="box list--xtall copy--small">
+                <li>Method calls</li>
+                <li>Combining lists and dictionaries</li>
+                <li>Builtins for collections</li>
+            </ul>
+        </section>
+      </section>
 
-        <!--[if lt IE 9]>
-        <script src="lib/js/html5shiv.js"></script>
-        <![endif]-->
-    </head>
-
-    <body>
-        <div class="reveal">
-            <!-- Any section element inside of this container is displayed as a slide -->
-            <div class="slides">
-              <!-- Opening slide -->
+            <!-- Block 1  - Intro to Classes and OOP - 20 minutes -->
+            <section>
                 <section>
-                    <img src = "images/gdi_logo_badge.png">
-                    <h3>Intro to Python</h3>
-                    <h4>Class 4</h4>
-                </section>
-
-                <section>
-                    <h3>Review</h3>
-                    <ul>
-                        <li>Method calls</li>
-                        <li>Combining lists and dictionaries</li>
-                        <li>Builtins for collections</li>
-                    </ul>
-                </section>
-
-                <!-- Block 1  - Intro to Classes and OOP - 20 minutes -->
-                <section>
-                    <h3>Functions on Dictionaries</h3>
-                    <p></p>
-                    <pre><code contenteditable class="fragment python">
+                  <h3>Functions on Dictionaries</h3>
+                  <p></p>
+                  <pre><code contenteditable class=" python">
 character = {
     'x': 10,
     'y': 20,
@@ -68,360 +69,310 @@ def heal(character, amount):
     character['health'] = character['health'] + amount
     if character['health'] > 100:
         character['health'] = 100
-                    </code></pre>
+                  </code></pre>
+                </section>
+            </section>
+
+            </section>
+
+            <section> <!-- Flask -->
+                <section>
+                    <h3>Flask</h3>
+                    <p class="box--small copy--small">Flask is a small Python framework for web development</p>
+                    <p class="box--small copy--small">It's easy to get up and running, and to start building your web server!</p>
                 </section>
 
                 <section>
-                    <h3>Classes</h3>
-                    <p>A <strong>class</strong> creates a new type of object.</p>
-                    <p class="fragment">A class defines the attributes and methods of objects of that type</p>
-                    <p class="fragment">Classes are used to create new objects of that type</p>
-                    <pre><code contenteditable class="fragment python">
-class Character():
+                    <h3>Flask's "Hello World"</h3>
+                        <pre><code contenteditable class=" python">
+from flask import Flask
+app = Flask(__name__)
 
-    def __init__(self, x, y, health):
-        self.x = x
-        self.y = y
-        self.health = health
+@app.route("/")
+def hello():
+    return "Hello World!"
 
-character = Character(10, 20, 100)
-                    </code></pre>
+app.run()
+                        </code></pre>
                 </section>
 
                 <section>
-                    <h3>A Sense of Self</h3>
-                    <p>The first argument to every method is <strong>self</strong>.</p>
-                    <p class="fragment">self contains the attributes and methods for the current object</p>
-                    <pre><code contenteditable class="fragment python">
-class Character():
-
-    def __init__(self, x, y, health):
-        self.x = x
-        self.y = y
-        self.health = health
-
-character = Character(10, 20, 100)
+                    <h3>Requests</h3>
+                    <pre><code contenteditable class=" python">
+@app.route('/')
+def hello():
+    return "Hello World!"
                     </code></pre>
+                    <p class="box--small copy--small">When you type in a URL in your browser, your computer sends a "request" to the server.</p>
+                    <p class="box--small copy--small">That request tells the server what information you're looking for, and how to return it to you.</p>
+                    <p class="box--small copy--small">This is the code that runs when we request the '/' URL</p>
+                    <p class="box--small copy--small">To run this code, go to <a href='localhost:5000'>localhost:5000</a> in your browser (after running the hello world file).</p>
                 </section>
 
                 <section>
-                    <h3>The __init__ Method</h3>
-                    <p>This method defines what the class should do when creating a new object.</p>
-                    <pre><code contenteditable class="fragment python">
-class Character():
+                    <h3>Fancy URLs</h3>
+                    <p class="box--small copy--small">You can request data from other URLs on the same server, too!</p>
+                    <pre><code contenteditable class=" python">
+@app.route('/hi')
+def hi():
+    return "Hi there!"
 
-    def __init__(self, x, y, health):
-        self.x = x
-        self.y = y
-        self.health = health
-
-character_a = Character(10, 20, 100)
-character_b = Character(10, 20, 100)
+@app.route('/')
+def hello():
+    return "Hello World!"
                     </code></pre>
-                <p class="fragment">To create a new Character, the syntax looks like a function call. These arguments are passed to the __init__ method</p>
+                    <p class="box--small copy--small">Try visiting <a href='localhost:5000/hi' target='_blank'>localhost:5000/hi</a> to check it out!</p>
+                    <p class="box--small copy--small">These URLs are called "endpoints"</p>
                 </section>
 
-                <section>
-                    <h3>Class Methods</h3>
-                    <p>A class also defines <strong>methods</strong>, which are functions that operate on objects of that type</p>
-                    <p class="fragment">Assigning values to an attribute on self is how we <strong>mutate</strong> the object's state.</p>
-                    <pre><code contenteditable class="fragment python">
-# inside the character class
-
-    def heal(self, amount):
-        self.health = self.health + amount
-        if self.health > 100:
-            self.health = 100
-
-    def injure(self, amount):
-        self.health = self.health - amount
-        if self.health < 0:
-           self.health = 0
-
-character = Character(10, 20, 100)
-character.injure(10)
-                    </code></pre>
-                </section>
-
-                <!-- Let's develop it: 10 minutes -->
                 <section>
                     <h3>Let's Develop It</h3>
-                    <ul>
-                        <li>In your text editor, create your own class with an __init__ method, and at least one other method.</li>
-                        <li>Open a Python shell and import the class. Create one or more objects from the class</li>
-                        <li>If time allows, create a function that creates objects from your class, calls a method, and prints one of its attributes</li>
-                        <li>Use the next slide as an example</li>
-                    </ul>
+                    <p class="box--small copy--small">Write a function that prints "Hello" to the terminal when you make a request to a specific endpoint!</p>
                 </section>
+            </section> <!-- End Flask Intro -->
 
+            <section> <!-- Including Variables -->
                 <section>
+                    <h3>Variables</h3>
+                    <p class="box--small copy--small">With Flask, you can get input from the URL.</p>
+                    <p class="box--small copy--small">You just have to tell it what information you want.</p>
+                    <pre><code contenteditable class=" python">
+@app.route('/hello/&ltname>')
+def say_hello(name):
+    return 'Hello %s' % name
+                    </code></pre>
+                    <p class="box--small copy--small">Example URL: <a href='localhost:5000/hi/cam' target="_blank">localhost:5000/hi/cam</a></p>
+                </section>
+            </section>
+
+            <section> <!-- Templating -->
+                <section>
+                    <h3>Building Web Pages</h3>
+                    <p class="box--small copy--small">So far, what we've done doesn't look much like a web page!</p>
+                    <p class="box--small copy--small">Flask comes with the ability to render HTML files into web pages.</p>
+                    <p class="box--small copy--small">Create a "templates" directory in your project.</p>
+                    <p class="box--small copy--small">Copy this code into templates/hello.html</p>
+                    <pre><code contenteditable class="html">
+&lt!doctype html>
+&lttitle>Hello from Flask&lt/title>
+&lth1>Hello World&lt/h1>
+                    </code></pre>
+                    <p class="box--small copy--small">Shameless plug: Check out our HTML/CSS class!</p>
+                </section>
+                <section>
+                    <h3>Displaying Web Pages</h3>
+                    <p class="box--small copy--small">Once we've defined our web page, we need to tell Flask to display it</p>
+                    <p class="box--small copy--small">This is also called rendering.</p>
+                    <p class="box--small copy--small">Make a new file called "rendering.py" (outside the templates directory).</p>
                     <pre><code contenteditable class="python">
-# in character.py
-class Character():
+from flask import Flask
+from flask import render_template
 
-    def __init__(self, x, y, health):
-        self.x = x
-        self.y = y
-        self.health = health
+app = Flask(__name__)
 
-    def heal(self, amount):
-        self.health = self.health + amount
-        if self.health > 100:
-            self.health = 100
+@app.route('/')
+def hello():
+    return render_template('hello.html')
                     </code></pre>
+                </section>
+
+                <section>
+                    <h3>Templating</h3>
+                    <p class="box--small copy--small">With Flask, you can pass variables into your HTML file.</p>
+                    <p class="box--small copy--small">Edit your HTML file to look like this: </p>
                     <pre><code contenteditable class="python">
-# in Python shell
-from character import Character
-character_a = Character(10, 20, 100)
-character_a.injure(10)
-print("character health is: " + character_a.health)
-                    </code></pre>
-                </section>
-
-                <!-- Block 2 - Inheritance and Composition 20 Minutes -->
-
-                <section>
-                    <h3>Inheritance</h3>
-                    <p>A class can <strong>inherit</strong> from another class.</p>
-                    <p class="fragment">A class that inherits from another is called the "child class" and obtains the methods and attributes of its "parent"</p>
-                    <pre><code contenteditable class="fragment python">
-class Mobile(object):
-    """
-    An object with an x, y position, and methods for moving
-    """
-
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-
-    def move_up():
-        self.y = self.y - 1
-
-    # ... methods for move_down, move_left, and move_right
+&lt!doctype html>
+&lttitle>Hello from Flask&lt/title>
+&lth1>Hello {{ name }} &lt/h1>
                     </code></pre>
                 </section>
 
                 <section>
-                    <h3>Inheritance Continued</h3>
-                    <p>The move_up method is <strong>overridden</strong> in the child class below:</p>
-                    <pre><code contenteditable class="fragment python">
-class BoundedMobile(Mobile):
-    """
-    An object with an x, y position, and methods for moving
-    The x, y position must be within bounds
-    """
-
-    def move_up():
-        self.y = self.y - 1
-        if self.y < 0:
-            self.y = 0
+                    <h3>Rendering Templates</h3>
+                    <p class="box--small copy--small">Now, we can change one line in our python file to look like this: </p>
+                    <pre><code contenteditable class="python">
+    return render_template('hello.html', name='Cam')
                     </code></pre>
-                    <p class="fragment">See <a href="http://nicklang.com/gdi-intro-python/examples/mobile.py">mobile.py</a> for a more complete example.</p>
+                    <p class="box--small copy--small">And we'll be able to send data from our Python code into our HTML page.</p>
+                </section>
+
+            </section> <!-- End Templating -->
+
+            <!-- <section> <!- Sending your own requests ->
+                <section>
+                    <h3>Sending Requests</h3>
+                    <p class="box--small copy--small">To make it easier to build websites, you can use other people's data!</p>
+                    <p class="box--small copy--small">To do that, we need to learn a bit about the requests module</p>
+                </section>
+            </section> -->
+
+            <section> <!-- POST requests -->
+                <section>
+                    <h3>POST Requests</h3>
+                    <p class="box--small copy--small">So far, we've only been using GET requests.</p>
+                    <p class="box--small copy--small">GET requests are useful when you want to "get" information from another server.</p>
+                    <p class="box--small copy--small">When you want to send information, you use POST requests</p>
+                </section>
+                <section>
+                    <h3>Forms and Buttons</h3>
+                    <p class="box--small copy--small">An example of a POST request is when you submit information through a form.</p>
+                    <p class="box--small copy--small">Going back to last section, we'll build a quick form.</p>
+                    <!-- Code Example for Form -->
+                    <pre><code contenteditable class="html">
+&lt!doctype html>
+
+&ltform action='/handle_request' method='post'>
+    &ltinput type="text" id="name" name="name">
+    &ltinput type="submit">
+&lt/form>
+                    </code></pre>
+
                 </section>
 
                 <section>
-                    <h3>What's Super about Super</h3>
-                    <p><strong>super</strong> is often helpful when writing methods that override the method of the parent class</p>
-                    <pre><code contenteditable class="fragment python">
-class BoundedMobile(Mobile):
-    """
-    An object with an x, y position, and methods for moving
-    The x, y position must be within bounds
-    """
+                    <h3>Handling a POST request in Python</h3>
+                    <p class="box--small copy--small">You'll need a method like this:</p>
+                    <pre><code contenteditable class="python">
+from flask import request
 
-    def move_up():
-        super(BoundedMobile, self).move_up()
-        if self.y < 0:
-            self.y = 0
-                    </code></pre>
-                    <p class="fragment">The call to super() takes the name of the child class, followed by self. This is followed by the method call and any arguments to pass to it</p>
-                </section>
-
-                <section>
-                    <h3>Composition</h3>
-                    <p>Classes can also use the technique of <strong>composition</strong></p>
-                    <p class="fragment">This simply means that a given object contains other objects within it.</p>
-                    <p class="fragment">This often leads to a clearer and simpler design</p>
-                    <pre><code contenteditable class="fragment python">
-class Grid(object):
-
-    def __init__(self, x_limit, y_limit):
-        self.x_limit = x_limit
-        self.y_limit = y_limit
-        self.mobiles = []
-
-    def add_mobile(self, x, y):
-        mob = BoundedMobile(x, y, self.x_limit, self.y_limit)
-        mobs = self.mobiles.get((x, y), [])
-        mobs.append(mob)
-        self.mobiles[(x, y)] = mobs
+@app.route('/handle_request', methods=['POST'])
+def print_name():
+    name = request.form['name']
+    return name
                     </code></pre>
                 </section>
+            </section> <!-- End POST requests -->
 
-                <section>
-                    <h3>Composition Continued</h3>
-                    <p>Given the class on the previous slide, the following code creates mobiles within the grid object. (Complete code is available in the aforementioned <a href="http://nicklang.com/gdi-intro-python/examples/mobile.py">mobile.py</a> file.)</p>
-                    <pre><code contenteditable class="fragment python">
-from mobile import Grid
 
-grid = Grid(7, 7)
-grid.add_mobile(1, 2)
-grid.add_mobile(0, 1)
-grid.add_mobile(0, 1)
-
-grid.display_grid()
-                    </code></pre>
-                </section>
-
-                <!-- Let's develop it: 10 minutes -->
+            <section> <!-- Project Section -->
                 <section>
                     <h3>Let's Develop It</h3>
-                    <p>Create a class that uses inheritance, composition, or both.</p>
-                    <p>To help you, use your work from the last exercise or the classes from <a href="http://nicklang.com/gdi-intro-python/examples/mobile.py">mobile.py</a></p>
-                </section>
-
-                <section>
-                    <h3>Higher order functions</h3>
-                    <p>A <strong>higher order function</strong> is a function that returns a function, takes a function as an argument, or both</p>
-                    <p class="fragment">One commonly used higher order function that is a Python builtin is called <strong>map</strong></p>
-                    <pre><code contenteditable class="fragment python">
-# Define any function
-def sqaure(number):
-    return number ** 2
-
-# Pass the function to map along with an iterable
-squares = map(square, range(10))
-                    </code></pre>
-                    <p class="fragment">N.B. - map has performance problems for large data sets and should only be used when the data set is well defined and somewhat small.</section>
-                </section>
-
-                <section>
-                    <h3>Let's Develop It</h3>
-                    <p>Choose among any of these projects (Resources available on the next page):</p>
-                    <ul>
-                        <li>Search the Web - Write a program that searches the web using DuckDuckGo and displays results.
+                    <p class="box--small copy--small">Choose among any of these projects:<br/><small>(Resources available on the next page)</small></p>
+                    <ul class="copy--xsmall list--tall">
+                      <li><strong>Create a GUI Program</strong>- Write a program that interacts with users with a window,<br/>not the command line.
+                        <li><strong>Search the Web </strong>- Write a program that searches the web<br/>using DuckDuckGo and displays results.
                         </li>
-                        <li>Encryption - Write a program that encrypts a string from user input, or file and is able to decrypt it as well.
+                        <li><strong>Encryption </strong>- Write a program that encrypts a string from<br/>user input, or file and is able to decrypt it as well.
                         </li>
-                        <li>Command Line Game - Create a simple game that runs inside the terminal.
+                        <li><strong>Command Line Game </strong>- Create a simple game that runs inside the terminal.
                         </li>
                 </section>
 
                 <section>
                     <h3>Let's Develop It Resources</h3>
-                    <table>
+                    <table class="copy--small box">
                         <tr>
-                            <td>Search the Web</td>
-                            <td><a href="https://github.com/crazedpsyc/python-duckduckgo/">python-duckduckgo</a> library to get started. Download duckduckgo.py and put it in the same directory as your code. Use the query() function it provides to begin. (HINT: Results are often empty, but 'related' list usually has a few hits.)</td>
+                            <td style="width: 250px;">Create a GUI Program</td>
+                            <td style="padding-bottom: 20px;">Look at <a href="http://www.gdiannarbor.com/events/intro-python/examples/simple_gui.py">simple_gui.py</a> to get started with an interface using the the tkinter library. Add inputs, buttons, and labels to create a game.  Maybe Tic-Tac-Toe?</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 250px;">Search the Web</td>
+                            <td style="padding-bottom: 20px;"><a href="https://github.com/crazedpsyc/python-duckduckgo/">python-duckduckgo</a> library to get started. Download duckduckgo.py and put it in the same directory as your code. Use the query() function it provides to begin. (HINT: Results are often empty, but 'related' list usually has a few hits.)</td>
                         </tr>
                         <tr>
                             <td>Encryption</td>
                             <td>Read about the <a href="https://en.wikipedia.org/wiki/Caesar_cipher">Caesar Cipher</a> or find a similarly simple encryption mechanism online. You should find the ord() and chr() functions helpful, as well as the modulus operator '%'</td>
                         </tr>
                     </table>
-                    <p>continued on next page...</p>
+                    <p class="copy--xsmall box--small">continued on next page...</p>
                 </section>
 
                 <section>
                     <h3>Let's Develop It Resources Continued</h3>
-                    <table>
+                    <table class="copy--small box">
                         <tr>
-                            <td>Command Line Game</td>
-                            <td>This might be a text adventure with paragraphs of text followed by a series of choices for the user. A choice maps to another node in the story (another paragraph with choices). You might try storing the paragraphs separately in a text file. The format might be something different, such as a series of "rooms", each with a description, for the user to explore by entering commands such as "go west". Examples of these kinds of games are <a href="https://en.wikipedia.org/wiki/Colossal_Cave_Adventure">Colossal Cave Adventure</a> and <a href="https://en.wikipedia.org/wiki/Zor">Zork</a></td>
+                            <td style="width: 250px;">Command Line Game</td>
+                            <td>This might be a text adventure with paragraphs of text followed by a series of choices for the user. A choice maps to another node in the story (another paragraph with choices). You might try storing the paragraphs separately in a text file. The format might be something different, such as a series of "rooms", each with a description, for the user to explore by entering commands such as "go west". Examples of these kinds of games are <a href="https://en.wikipedia.org/wiki/Colossal_Cave_Adventure">Colossal Cave Adventure</a> and <a href="https://en.wikipedia.org/wiki/Zork">Zork</a></td>
                         </tr>
                     </table>
                 </section>
+            </section>
 
                 <section>
                     <h3>Future Resources</h3>
-                    <p></p>
-                    <table>
+                    <table class="box copy--xsmall">
                         <tr>
-                            <td><a href="http://docs.python.org/2/">Python.org Documentation</a></td>
-                            <td>Official Python Documentation</td>
+                            <td style="width: 360px;"><a href="http://docs.python.org/3.5/">Python.org Documentation</a></td>
+                            <td style="padding-bottom: 20px;">Official Python Documentation</td>
                         </tr>
                         <tr>
                             <td><a href="http://www.greenteapress.com/thinkpython/html/index.html">Think Python</a></td>
-                            <td>Online and print book with exercises.</td>
+                            <td style="padding-bottom: 20px;">Online and print book with exercises.</td>
                         </tr>
                         <tr>
                             <td><a href="http://learnpythonthehardway.org/book/">Learn Python the Hard Way</a></td>
-                            <td>Online and print book with exercises</td>
+                            <td style="padding-bottom: 20px;">Online and print book with exercises</td>
                         </tr>
                         <tr>
                             <td><a href="https://developers.google.com/edu/python/">Google's Python Class</a></td>
-                            <td>Video lectures coupled with exercises</td>
+                            <td style="padding-bottom: 20px;">Video lectures coupled with exercises</td>
                         </tr>
                         <tr>
                             <td><a href="http://newcoder.io/tutorials/">New Coder</a></td>
-                            <td>Ideas for slightly larger projects and resources to get you started. Projects include accessing API's, scraping pages, writing IRC bots, and others.</td>
+                            <td style="padding-bottom: 20px;">Ideas for slightly larger projects and resources to get you started. Projects include accessing API's, scraping pages, writing IRC bots, and others.</td>
                         </tr>
                         <tr>
                             <td><a href="http://girldevelopit.com/">Girl Develop It</a></td>
-                            <td>Local workshops, events, and coding sessions</td>
+                            <td style="">Local workshops, events, and coding sessions</td>
                         </tr>
                     </table>
                 </section>
 
-                <section>
-                    <h3>Questions?</h3>
-                </section>
+      <section>
+        <section>
+            <h3>Questions?</h3>
+        </section>
 
-                <section>
-                  <h3>Upcoming Events</h3>
-                  <div class="left" style="width: 45%;font-size: 80%;">
-                    <strong class="green">Core Team Planning session</strong>
-                    <p>Feb. 6th, 6pm - 8pm</p>
-                    <p style="color:#999">InspiringApps</p>
-                  <strong class="blue">Intro to Servers</strong>
-                    <p>Feb. 8th &amp; 9th, 1pm - 5pm</p>
-                    <p style="color:#999">Simple Energy</p>
-                  </div>
-                  <div class="right" style="width: 45%;font-size: 80%;">
-                  <strong class="green">Code &amp; Coffee - Boulder</strong>
-                    <p>Feb. 15th, 10am - 1pm</p>
-                    <p style="color:#999">The Cup</p>
-                  <strong class="blue">Intermediate Git &amp; GitHub</strong>
-                    <p>Feb. 24th &amp; 9th, 6:3pm - 9pm</p>
-                    <p style="color:#999">Simple Energy</p>
-                  </div>
-                </section>
+        <section>
+          <h3>Wanna chat Python?</h3>
+          <div class="box">
+            <p class="box"><a href="https://gdiaa.slack.com/messages/python/details/" target="_blank" class="roll"><span>#python</span></a></p>
+            <p><small>Not on Slack? <a target="_blank" href="http://bit.ly/gdiaa-slack" class="roll"><span data-title="bit.ly/gdiaa-slack">bit.ly/gdiaa-slack</span></a></small></p>
+          </div>
+        </section>
 
-            </div>
-            <footer>
-                <div class="copyright">
-                    Intro to Python ~ Girl Develop It ~
-                    <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
-                </div>
-            </footer>
-        </div>
+        <section>
+          <img src="images/gdi_logo_badge.png" class="img--bare" height="450px" />
+          <div class="box--small">
+            <h3><span class="green">Intro to Python</span></h3>
+            <p><small>@gdiannarbor  &nbsp; | &nbsp; #GDIA2 &nbsp; | &nbsp; #IntroToPython</small></p>
+          </div>
+        </section>
+      </section>
 
-        <script src="reveal/lib/js/head.min.js"></script>
-        <script src="reveal/js/reveal.min.js"></script>
+    </div>
 
-        <script>
-            // Full list of configuration options available here:
-            // https://github.com/hakimel/reveal.js#configuration
-            Reveal.initialize({
-                controls: true,
-                progress: true,
-                history: true,
+    <footer>
+      <div class="copyright">
+        @gdiannarbor  &nbsp; | &nbsp; #GDIA2 &nbsp; | &nbsp; #IntroToPython &nbsp;
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+      </div>
+    </footer>
+  </div>
 
-                theme: Reveal.getQueryHash().theme, // available themes are in /css/themes
-                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+  <script src="js/jquery.min.js"></script>
+  <script src="js/reveal.min.js"></script>
+  <script>
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      rollingLinks: true,
+      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
 
-                // Optional libraries used to extend on reveal.js
-                dependencies: [
-                    { src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-                    { src: 'reveal/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-                    { src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-                    { src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-                ]
-            });
-
-        </script>
-    </body>
+      // Optional libraries used to extend on reveal.js
+      dependencies: [
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+        { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+    });
+  </script>
+</body>
 </html>
-
